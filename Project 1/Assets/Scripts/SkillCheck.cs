@@ -17,21 +17,29 @@ public class SkillCheck : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        //set upper limit of bar
         if (bar.transform.localPosition.y >= 0.15f)
         {
             goingUp = false;
         }
-        else if (bar.transform.localPosition.y <= -0.15f) {
+
+        //set lower limit of bar
+        else if (bar.transform.localPosition.y <= -0.15f) { //NOTE: localPosition is using the transform of the bar relative to the transform of the zones
             goingUp = true;
         }
 
+        //send bar up zones sprite
         if (goingUp && !stopped) {
             bar.transform.Translate(Vector2.up * Time.deltaTime * speed);
         }
+
+        //send bar down zones sprite
         if (!goingUp && !stopped) { 
             bar.transform.Translate(Vector2.down * Time.deltaTime * speed);
         }
 
+        //space to stop the bar
         if (Input.GetKeyDown(KeyCode.Space)) {
             stopped = true;
         }
