@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - NPCZone
+  - Walls
   layers:
   - Default
   - TransparentFX
@@ -40,4 +42,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Floors
+    uniqueID: 1154790675
+    locked: 0
+  - name: NPCZones
+    uniqueID: 358912687
+    locked: 0
+  - name: NonTilemapObj
+    uniqueID: 2533076793
+    locked: 0
+  - name: Walls
+    uniqueID: 2012497491
     locked: 0

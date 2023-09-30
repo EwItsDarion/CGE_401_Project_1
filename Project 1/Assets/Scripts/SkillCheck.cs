@@ -10,6 +10,13 @@ public class SkillCheck : MonoBehaviour
     public bool goingUp = true;
     public bool stopped = false;
     public float speed = 1;
+    public Zone stopZone;
+
+    public enum Zone { 
+        Great,
+        Good,
+        Bad
+    }
     // Start is called before the first frame update
     void Start()
     {
