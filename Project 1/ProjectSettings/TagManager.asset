@@ -6,6 +6,7 @@ TagManager:
   tags:
   - NPCZone
   - Walls
+  - Letter
   layers:
   - Default
   - TransparentFX

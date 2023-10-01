@@ -12,9 +12,8 @@ public class LetterSpawner : MonoBehaviour
 {
     //Set this array references in the inspector
     public GameObject[] prefabsToSpawn;
-    private float rightBound = 14, leftBound = -14, SpawnPosZ = 20;
     private Vector3 spawnPos;
-  
+    private GameObject letter;
 
     void Start()
     {
@@ -40,8 +39,15 @@ public class LetterSpawner : MonoBehaviour
         //pick a random animal
         int prefabIndex = Random.Range(0, prefabsToSpawn.Length);
 
-        //Generate spawn position
-        spawnPos = new Vector3(Random.Range(leftBound, rightBound), 0, SpawnPosZ);
+        letter = prefabsToSpawn[prefabIndex];
+
+        //Set spawn position by which letter they are
+        if ( letter.name == "Letter A")
+            spawnPos = new Vector3(7.11f, 10.387f, -3.47f);
+        else if (letter.name == "Letter D")
+            spawnPos = new Vector3(9.47f, 10.468f, -3.47f);
+        else
+            spawnPos = new Vector3(8.25f, 10.37f, -3.47f);
 
         //Instantiate/Create the animal in the generated spawn position
         Instantiate(prefabsToSpawn[prefabIndex], spawnPos, prefabsToSpawn[prefabIndex].transform.rotation);
