@@ -16,11 +16,14 @@ public class SkillCheck : MonoBehaviour
     public enum Zone { 
         Great,
         Good,
-        Bad
+        Bad,
+        none
     }
     // Start is called before the first frame update
     void Start()
     {
+        stopZone = Zone.none;
+
     }
 
     // Update is called once per frame

@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class GameManager : MonoBehaviour
 {
-    public SkillCheck skillCheck;
+    public GameObject skillCheck;
+
+    public TriggerZonePrompt zonePrompt;
 
 
    
@@ -18,6 +21,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (zonePrompt.inZone && Input.GetKeyDown(KeyCode.E)) {
+            skillCheck.SetActive(true);
+        }
     }
 }
