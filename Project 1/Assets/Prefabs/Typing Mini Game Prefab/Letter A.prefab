@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7653976649597196414}
   - component: {fileID: 7653976649597196413}
   - component: {fileID: 7653976649597196412}
+  - component: {fileID: 54414556452626962}
   m_Layer: 0
   m_Name: Letter A
   m_TagString: Letter
@@ -53,8 +54,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.2753601, y: 1.5658417, z: 1}
-  m_Center: {x: -0.06687927, y: 0.39476776, z: 0}
+  m_Size: {x: 0.8136269, y: 1.5344164, z: 1}
+  m_Center: {x: -0.016560169, y: 0.40882432, z: 0}
 --- !u!114 &7653976649597196413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,3 +117,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!54 &54414556452626962
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7653976649597196411}
+  serializedVersion: 2
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
