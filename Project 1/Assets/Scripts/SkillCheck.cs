@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -50,6 +51,34 @@ public class SkillCheck : MonoBehaviour
         //space to stop the bar
         if (Input.GetKeyDown(KeyCode.Space)) {
             stopped = true;
+            onStop();
         }
     }
+
+    public void onStop() {
+        if ((bar.transform.localPosition.y < -16.5 || bar.transform.localPosition.y > 16.5) ) {
+            stopZone = Zone.Bad;
+            Console.WriteLine("bad");
+        }
+        else if ((bar.transform.localPosition.y > -16.5 || bar.transform.localPosition.y < 16.5) && ((bar.transform.localPosition.y > 4 || bar.transform.localPosition.y < -4))) {
+            stopZone = Zone.Good;
+            Console.WriteLine("good");
+        }
+        else if (bar.transform.localPosition.y < 4 || bar.transform.localPosition.y > -4) {
+            stopZone = Zone.Great;
+            Console.WriteLine("great");
+        }
+    }
+
+
 }
+
+
+
+/* Converted Zones
+ * lower bad zone -50 to -16.5
+ * upper bad zone 16.5 to 50
+ * lower good -16.5 to -4
+ * upper good zone 4 to 16.5
+ * great zone -4 to 4
+ */
