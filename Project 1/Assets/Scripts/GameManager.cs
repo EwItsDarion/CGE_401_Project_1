@@ -5,13 +5,6 @@ using UnityEngine.Tilemaps;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject skillCheck;
-
-    public TriggerZonePrompt zonePrompt;
-    public GameObject pressEPrompt;
-
-
-   
     
     // Start is called before the first frame update
     void Start()
@@ -22,8 +15,5 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (zonePrompt.inZone && Input.GetKeyDown(KeyCode.E)) {
-            skillCheck.SetActive(true);
-        }
     }
 }

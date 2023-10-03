@@ -1,20 +1,78 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static SkillCheck;
 
 public class BasicMovement : MonoBehaviour
 {
     public Animator animator;
+    public bool inZone;
+    public bool locked = false;
+    public GameObject pressEPrompt;
+    public GameObject continuePrompt;
+    public GameObject skillCheck;
 
+
+    public float speed = 5f;
+
+    void Start() {
+        inZone = false;
+        
+    }
     // Update is called once per frame
     void Update()
     {
-        animator.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
-        animator.SetFloat("Vertical", Input.GetAxis("Vertical"));
-        float speed = 5f;
-        Vector3 horizontal = new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f);
-        transform.position = transform.position + horizontal * Time.deltaTime * speed;
-        Vector3 vertical = new Vector3(0.0f, Input.GetAxis("Vertical"), 0.0f);
-        transform.position = transform.position + vertical * Time.deltaTime * speed;
+
+        if (!locked)
+        {
+            animator.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
+            animator.SetFloat("Vertical", Input.GetAxis("Vertical"));
+        
+            Vector3 horizontal = new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f);
+            transform.position = transform.position + horizontal * Time.deltaTime * speed;
+            Vector3 vertical = new Vector3(0.0f, Input.GetAxis("Vertical"), 0.0f);
+            transform.position = transform.position + vertical * Time.deltaTime * speed;
+
+        }
+        
+
+        if (inZone && Input.GetKeyDown(KeyCode.E))
+        {
+            skillCheck.SetActive(true);
+            pressEPrompt.SetActive(false);
+            locked = true;
+        }
+
+        if (locked) {
+            if (skillCheck.GetComponent<SkillCheck>().stopped) { 
+                continuePrompt.SetActive(true);
+                if (Input.GetKeyDown(KeyCode.C)) {
+                    continuePrompt.SetActive(false);
+                    skillCheck.GetComponent<SkillCheck>().Reset();
+                    locked = false;
+                }            
+            }
+
+        }
     }
+
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("NPCZone"))
+        {
+            inZone = true;
+            pressEPrompt.SetActive(true);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("NPCZone"))
+        {
+            inZone = false;
+            pressEPrompt.SetActive(false);
+        }
+    }
+
 }
