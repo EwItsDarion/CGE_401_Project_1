@@ -7,6 +7,7 @@ public class TriggerZonePrompt : MonoBehaviour
     // Start is called before the first frame update
 
     public bool inZone= false;
+    public GameObject pressEPrompt;
     void Start()
     {
         
@@ -15,20 +16,19 @@ public class TriggerZonePrompt : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (inZone) {
-            print("InZone");
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Player")) {
             inZone = true;
+            pressEPrompt.SetActive(true);
         }
     }
 
     private void OnTriggerExit2D(Collider2D other) {
         if (other.CompareTag("Player")) {
             inZone = false;
+            pressEPrompt.SetActive(false);
         }
     }
 }

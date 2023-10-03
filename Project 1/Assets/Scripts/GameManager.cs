@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public GameObject skillCheck;
 
     public TriggerZonePrompt zonePrompt;
+    public GameObject pressEPrompt;
 
 
    

@@ -6,14 +6,17 @@ using UnityEngine.UI;
 
 public class SkillCheck : MonoBehaviour
 {
-   // public GameObject bar;
+    // public GameObject bar;
     public Image bar;
     public bool goingUp = true;
     public bool stopped = false;
     public float speed = 1;
     public Zone stopZone;
 
-    public enum Zone { 
+    public GameObject feedBack;
+    private Text feedbackText;
+
+    public enum Zone {
         Great,
         Good,
         Bad,
@@ -23,6 +26,7 @@ public class SkillCheck : MonoBehaviour
     void Start()
     {
         stopZone = Zone.none;
+        feedbackText = feedBack.GetComponent<Text>();
 
     }
 
@@ -47,8 +51,8 @@ public class SkillCheck : MonoBehaviour
         }
 
         //send bar down zones sprite
-        if (!goingUp && !stopped) { 
-            bar.transform.Translate(Vector2.down *Time.deltaTime * speed);
+        if (!goingUp && !stopped) {
+            bar.transform.Translate(Vector2.down * Time.deltaTime * speed);
         }
 
         //space to stop the bar
@@ -59,18 +63,34 @@ public class SkillCheck : MonoBehaviour
     }
 
     public void onStop() {
-        if ((bar.transform.localPosition.y < -16.5 || bar.transform.localPosition.y > 16.5) ) {
+        if ((bar.transform.localPosition.y < -16.5 || bar.transform.localPosition.y > 16.5)) {
             stopZone = Zone.Bad;
             Console.WriteLine("bad");
+            showFeedback();
         }
         else if ((bar.transform.localPosition.y > -16.5 || bar.transform.localPosition.y < 16.5) && ((bar.transform.localPosition.y > 4 || bar.transform.localPosition.y < -4))) {
             stopZone = Zone.Good;
             Console.WriteLine("good");
+            showFeedback();
         }
         else if (bar.transform.localPosition.y < 4 || bar.transform.localPosition.y > -4) {
             stopZone = Zone.Great;
             Console.WriteLine("great");
+            showFeedback();
         }
+    }
+
+    private void showFeedback() {
+        feedbackText.text = stopZone.ToString();
+        feedBack.SetActive(true);
+    }
+
+    public void Reset() {
+        stopZone = Zone.none;
+        feedbackText.text = "none";
+        feedBack.SetActive(false);
+        stopped = false;
+        gameObject.SetActive(false);
     }
 
 
