@@ -12,6 +12,8 @@ public class BasicMovement : MonoBehaviour
     public GameObject continuePrompt;
     public GameObject skillCheck;
 
+    private GameObject NPC;
+
 
     public float speed = 5f;
 
@@ -19,6 +21,8 @@ public class BasicMovement : MonoBehaviour
         inZone = false;
         
     }
+
+
     // Update is called once per frame
     void Update()
     {
@@ -49,6 +53,7 @@ public class BasicMovement : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.C)) {
                     continuePrompt.SetActive(false);
                     skillCheck.GetComponent<SkillCheck>().Reset();
+                    NPC.GetComponent<BoxCollider2D>().enabled= false;
                     locked = false;
                 }            
             }
@@ -63,8 +68,10 @@ public class BasicMovement : MonoBehaviour
         {
             inZone = true;
             pressEPrompt.SetActive(true);
+            NPC = other.gameObject;
         }
     }
+
 
     private void OnTriggerExit2D(Collider2D other)
     {
@@ -72,6 +79,7 @@ public class BasicMovement : MonoBehaviour
         {
             inZone = false;
             pressEPrompt.SetActive(false);
+            NPC = null;
         }
     }
 
