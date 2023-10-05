@@ -136,6 +136,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c7aa8be980c93740bbf5727475d40cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    name: 
-    sentences: []
+  dialogues:
+  - zone: Good
+    sentences:
+    - You#Good Test
+    - Them#Hype?
+  - zone: Great
+    sentences:
+    - You#Great Test
+    - Them#Hype?
+  - zone: Bad
+    sentences:
+    - You#Bad Test
+    - Them#Hype?
