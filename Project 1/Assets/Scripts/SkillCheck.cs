@@ -58,7 +58,7 @@ public class SkillCheck : MonoBehaviour
         }
 
         //space to stop the bar
-        if (Input.GetKeyDown(KeyCode.Space)) {
+        if (Input.GetKeyDown(KeyCode.Space) && !stopped) {
             stopped = true;
             onStop();
         }
