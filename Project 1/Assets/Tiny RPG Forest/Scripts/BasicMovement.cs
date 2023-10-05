@@ -13,6 +13,8 @@ public class BasicMovement : MonoBehaviour
     public GameObject skillCheck;
 
     private GameObject NPC;
+    public DialogueManager dialogueManager;
+    private bool triggeredDialogue;
 
 
     public float speed = 5f;
@@ -49,9 +51,15 @@ public class BasicMovement : MonoBehaviour
 
         if (locked) {
             if (skillCheck.GetComponent<SkillCheck>().stopped) { 
-                continuePrompt.SetActive(true);
-                if (Input.GetKeyDown(KeyCode.C)) {
-                    continuePrompt.SetActive(false);
+                //continuePrompt.SetActive(true);
+
+                if (!triggeredDialogue) { 
+                    NPC.GetComponent<DialogueTrigger>().TriggerDialogue(skillCheck.GetComponent<SkillCheck>().stopZone.ToString());
+                    triggeredDialogue = true;
+                
+                }
+                if (dialogueManager.empty) {
+                    //continuePrompt.SetActive(false);
                     skillCheck.GetComponent<SkillCheck>().Reset();
                     NPC.GetComponent<BoxCollider2D>().enabled= false;
                     locked = false;
