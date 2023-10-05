@@ -13,6 +13,8 @@ public class SkillCheck : MonoBehaviour
     public float speed = 1;
     public Zone stopZone;
 
+    public GameManager manager;
+
     public GameObject feedBack;
     private Text feedbackText;
 
@@ -65,16 +67,19 @@ public class SkillCheck : MonoBehaviour
     public void onStop() {
         if ((bar.transform.localPosition.y < -16.5 || bar.transform.localPosition.y > 16.5)) {
             stopZone = Zone.Bad;
+            manager.score--;
             Console.WriteLine("bad");
             showFeedback();
         }
         else if ((bar.transform.localPosition.y > -16.5 || bar.transform.localPosition.y < 16.5) && ((bar.transform.localPosition.y > 4 || bar.transform.localPosition.y < -4))) {
             stopZone = Zone.Good;
+            manager.score++;
             Console.WriteLine("good");
             showFeedback();
         }
         else if (bar.transform.localPosition.y < 4 || bar.transform.localPosition.y > -4) {
             stopZone = Zone.Great;
+            manager.score += 3;
             Console.WriteLine("great");
             showFeedback();
         }

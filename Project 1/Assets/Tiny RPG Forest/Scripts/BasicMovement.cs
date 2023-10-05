@@ -16,6 +16,8 @@ public class BasicMovement : MonoBehaviour
     public DialogueManager dialogueManager;
     private bool triggeredDialogue;
 
+    public GameManager manager;
+
 
     public float speed = 5f;
 
@@ -59,6 +61,7 @@ public class BasicMovement : MonoBehaviour
                 
                 }
                 if (dialogueManager.empty) {
+                    manager.moves--;
                     //continuePrompt.SetActive(false);
                     skillCheck.GetComponent<SkillCheck>().Reset();
                     NPC.GetComponent<BoxCollider2D>().enabled= false;
