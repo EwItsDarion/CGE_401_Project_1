@@ -63,6 +63,7 @@ public class BasicMovement : MonoBehaviour
                     skillCheck.GetComponent<SkillCheck>().Reset();
                     NPC.GetComponent<BoxCollider2D>().enabled= false;
                     locked = false;
+                    triggeredDialogue = false;
                 }            
             }
 
