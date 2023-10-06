@@ -28,8 +28,8 @@ public class LetterSpawner : MonoBehaviour
         while (true)
         {
             SpawnRandomPrefab();
-            float randomDelay = Random.Range(0.8f, 2.0f);
-            yield return new WaitForSeconds(randomDelay);
+            float delay = 1.5f;
+            yield return new WaitForSeconds(delay);
         }
 
     }
@@ -59,5 +59,7 @@ public class LetterSpawner : MonoBehaviour
 
         //Instantiate/Create the animal in the generated spawn position
         Instantiate(prefabsToSpawn[prefabIndex], spawnPos, prefabsToSpawn[prefabIndex].transform.rotation);
+
+       
     }
 }

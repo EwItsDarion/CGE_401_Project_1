@@ -9,7 +9,7 @@ public class LetterController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        lowerBoundary = -1.0f;
+        lowerBoundary = -4.0f;
     }
 
     // Update is called once per frame
