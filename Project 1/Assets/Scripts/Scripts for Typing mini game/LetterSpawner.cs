@@ -1,7 +1,7 @@
 ﻿/*
  * Julian Avila
- * Prototype 2
- * Spawns random animals in a random position
+ * Project 1
+ * Spawns random letters 
  */
 using System.Collections;
 using System.Collections.Generic;
@@ -14,7 +14,7 @@ public class LetterSpawner : MonoBehaviour
     public GameObject[] prefabsToSpawn;
     private Vector3 spawnPos;
     private GameObject letter;
-
+    private GameObject letter_Press;
     void Start()
     {
         StartCoroutine(SpawnRandomPrefabwithCoroutine());
@@ -42,12 +42,20 @@ public class LetterSpawner : MonoBehaviour
         letter = prefabsToSpawn[prefabIndex];
 
         //Set spawn position by which letter they are
-        if ( letter.name == "Letter A")
-            spawnPos = new Vector3(7.11f, 10.387f, -3.47f);
-        else if (letter.name == "Letter D")
-            spawnPos = new Vector3(9.47f, 10.468f, -3.47f);
+        if (letter.name == "Letter A")
+        {
+            letter_Press = GameObject.Find("Typing matcher (A)");
+        }
+        else if (letter.name == "Letter B")
+        {
+            letter_Press = GameObject.Find("Typing matcher (D)");
+        }
         else
-            spawnPos = new Vector3(8.25f, 10.37f, -3.47f);
+        {
+            letter_Press = GameObject.Find("Typing matcher (B)");
+        }
+  
+        spawnPos = new Vector3(letter_Press.transform.position.x-.10f, letter_Press.transform.position.y + 20, letter_Press.transform.position.z-.5f);
 
         //Instantiate/Create the animal in the generated spawn position
         Instantiate(prefabsToSpawn[prefabIndex], spawnPos, prefabsToSpawn[prefabIndex].transform.rotation);
