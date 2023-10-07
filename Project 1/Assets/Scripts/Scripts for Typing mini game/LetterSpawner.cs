@@ -62,6 +62,7 @@ public class LetterSpawner : MonoBehaviour
         //Instantiate/Create the animal in the generated spawn position
         Instantiate(prefabsToSpawn[prefabIndex], spawnPos, prefabsToSpawn[prefabIndex].transform.rotation);
 
-       
+        
+
     }
 }

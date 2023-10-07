@@ -18,9 +18,14 @@ public class LetterController : MonoBehaviour
         if(TypingMiniGameManager.gameOver == false)
         transform.Translate(Vector3.down *  Time.deltaTime * speed);
 
+        //Player misses the letter
         if(transform.position.y<=lowerBoundary)
         {
             Destroy(gameObject);
+            //Increment misses
+            PlayerControllerManager.failedHitCount++;
+            //Decrement number of letters remaining
+            TypingMiniGameManager.lettersRemaining--;
         }
 
     }

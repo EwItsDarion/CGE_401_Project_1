@@ -6,13 +6,16 @@ public class PlayerControllerManager : MonoBehaviour
 {
 
     private GameObject letter;
-    public Material good, bad, normal;
+    public Material good, bad, normal,pressed;
     public bool successfulHit = false, failedHit = false;
+    private bool pressedA, pressedD, pressedB;
+
+
     public Text computerText;
     private string[] randomWords;
     private int randomWordIndex;
     public int wordCount;
-    static public int successfulHitCount=0, failedHitCount=0;
+    static public float successfulHitCount=0, failedHitCount=0;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,9 +32,9 @@ public class PlayerControllerManager : MonoBehaviour
        
         wordCount = computerText.text.Split(' ').Length;
 
+        //Refresh computer screen with a new page
         if (wordCount > 10)
             computerText.text = "";
-
 
         //if the player types the letter at the precise moment, then the key will turn a color green
         if (successfulHit)
@@ -65,7 +68,10 @@ public class PlayerControllerManager : MonoBehaviour
                     Destroy(other.gameObject);
                     Debug.Log("Hit");
                     successfulHit = true;
+                    //Increment successful hits
                     successfulHitCount++;
+                    //Decrement number of letters remaining
+                    TypingMiniGameManager.lettersRemaining--;
                 }
 
             }
@@ -78,6 +84,7 @@ public class PlayerControllerManager : MonoBehaviour
                     Debug.Log("Hit");
                     successfulHit = true;
                     successfulHitCount++;
+                    TypingMiniGameManager.lettersRemaining--;
                 }
             }
 
@@ -90,6 +97,7 @@ public class PlayerControllerManager : MonoBehaviour
                     Debug.Log("Hit");
                     successfulHit = true;
                     successfulHitCount++;
+                    TypingMiniGameManager.lettersRemaining--;
                 }
             }
         }

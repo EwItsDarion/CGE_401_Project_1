@@ -4,9 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 public class TypingMiniGameManager : MonoBehaviour
 {
-    private int maximumNumberofWords;
+    static public int maximumNumberofLetters,lettersRemaining;
+    private float average;
     public GameManager centralGameManager;
-    public Text tutorialText1, tutorialText2, tutorialText3,tutorialText4,levelComplete;
+    public Text tutorialText1, tutorialText2, tutorialText3,tutorialText4,levelComplete,numberofLettersRemainingText;
     static public bool gameOver,gameWon,gameLoss;
     // Start is called before the first frame update
     void Start()
@@ -14,19 +15,28 @@ public class TypingMiniGameManager : MonoBehaviour
         gameOver = false;
 
         //if it is the first level, display tutorial text
-        if (true)//(GameManager.level ==1)
+        if (true) // if level 1
         {
             tutorialText1.enabled = true;
             tutorialText2.enabled = false;
             tutorialText3.enabled = false;
             tutorialText4.enabled = false;
+            maximumNumberofLetters = 10;
+            lettersRemaining = maximumNumberofLetters;
         }
+
+       
+
         levelComplete.enabled = false;
     }
 
     // Update is called once per frame
     void Update()
-    { 
+    {
+        numberofLettersRemainingText.text = "Number of hits: " + PlayerControllerManager.successfulHitCount +
+           "\nNumber of Misses: " + PlayerControllerManager.failedHitCount +
+           "\nNumber of letters remaining: " + lettersRemaining;
+
         //If level is 1, go through tutorial
         if (PlayerControllerManager.successfulHitCount == 7 || PlayerControllerManager.failedHitCount == 7)
         {
@@ -35,14 +45,14 @@ public class TypingMiniGameManager : MonoBehaviour
             tutorialText2.enabled = false;
             tutorialText3.enabled = false;
         }
-       else if (PlayerControllerManager.successfulHitCount == 5 || PlayerControllerManager.failedHitCount == 5)
+         if (PlayerControllerManager.successfulHitCount == 5 || PlayerControllerManager.failedHitCount == 5)
         {
             tutorialText3.enabled = true;
             tutorialText1.enabled = false;
             tutorialText2.enabled = false;
             tutorialText4.enabled = false;
         }
-        else if (PlayerControllerManager.successfulHitCount == 2 || PlayerControllerManager.failedHitCount == 2)
+        if (PlayerControllerManager.successfulHitCount == 2 || PlayerControllerManager.failedHitCount == 2)
         {
             tutorialText2.enabled = true;
             tutorialText1.enabled = false;
@@ -50,10 +60,10 @@ public class TypingMiniGameManager : MonoBehaviour
             tutorialText4.enabled = false;
         }
 
-        if (PlayerControllerManager.successfulHitCount == 10 || PlayerControllerManager.failedHitCount == 10)
+        if (lettersRemaining==0)
         {
             gameOver = true;
-            if (PlayerControllerManager.successfulHitCount == 10)
+            if (PlayerControllerManager.successfulHitCount > PlayerControllerManager.failedHitCount)
             {
                 gameWon = true;
             }
@@ -83,6 +93,7 @@ public class TypingMiniGameManager : MonoBehaviour
 
     void DisplayScore()
     {
+        average = (PlayerControllerManager.successfulHitCount / maximumNumberofLetters)*100;
         if(gameWon)
         {
             levelComplete.text = "Level Complete!";
@@ -92,6 +103,6 @@ public class TypingMiniGameManager : MonoBehaviour
             levelComplete.text = "Level Failed!";
         }
         levelComplete.text += "\nSuccessful strokes: " + PlayerControllerManager.successfulHitCount + "\nFailed Strokes: " +
-               PlayerControllerManager.failedHitCount;
+               PlayerControllerManager.failedHitCount + "\nAccuracy: " + average + " %";
     }
 }
