@@ -56,7 +56,7 @@ public class BasicMovement : MonoBehaviour
                 //continuePrompt.SetActive(true);
 
                 if (!triggeredDialogue) { 
-                    NPC.GetComponent<DialogueTrigger>().TriggerDialogue(skillCheck.GetComponent<SkillCheck>().stopZone.ToString());
+                    NPC.GetComponent<DialogueTrigger>().TriggerDialogue(skillCheck.GetComponent<SkillCheck>().stopZone.ToString() + manager.currentLevel.ToString());
                     triggeredDialogue = true;
                 
                 }

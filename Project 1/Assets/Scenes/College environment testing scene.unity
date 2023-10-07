@@ -127,7 +127,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &31254456
 Transform:
   m_ObjectHideFlags: 0
@@ -779,7 +779,7 @@ PrefabInstance:
     - target: {fileID: 3315857053718717552, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3315857053718717552, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
         type: 3}
@@ -1077,7 +1077,7 @@ PrefabInstance:
     - target: {fileID: 3315857053718717552, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3315857053718717552, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
         type: 3}
@@ -1098,6 +1098,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NPC (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[0].sentences.Array.data[0]
+      value: 1#You#Good Test
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[0].sentences.Array.data[1]
+      value: 1#Them#Hype?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[1].sentences.Array.data[0]
+      value: 1#You#Great Test
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[1].sentences.Array.data[1]
+      value: 1#Them#Hype?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[2].sentences.Array.data[0]
+      value: 1#You#Bad Test
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[2].sentences.Array.data[1]
+      value: 1#Them#Hype?
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88842c6c9ab1d0a41854c8b49294ce3d, type: 3}
@@ -2435,6 +2465,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 570797817}
   m_CullTransparentMesh: 0
+--- !u!1 &575364538 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3315857053718717566, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+    type: 3}
+  m_PrefabInstance: {fileID: 343160446}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &595488019 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3315857053718717566, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+    type: 3}
+  m_PrefabInstance: {fileID: 479400973}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &609913567
 GameObject:
   m_ObjectHideFlags: 0
@@ -2548,10 +2590,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
+  currentLevel: 0
   moves: 0
+  maxLevel: 0
   gameOver: 0
   won: 0
   scoreText: {fileID: 727878619}
+  NPCS:
+  - {fileID: 1330183221}
+  - {fileID: 595488019}
+  - {fileID: 1314723275}
+  - {fileID: 575364538}
 --- !u!4 &656444301
 Transform:
   m_ObjectHideFlags: 0
@@ -2564,7 +2613,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1942770804}
-  m_RootOrder: 9
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &678137074
 GameObject:
@@ -3104,7 +3153,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1942770804}
-  m_RootOrder: 7
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &996844785
 PrefabInstance:
@@ -3151,7 +3200,7 @@ PrefabInstance:
     - target: {fileID: 3315857053718717552, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3315857053718717552, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
         type: 3}
@@ -3560,6 +3609,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1272063459}
   m_CullTransparentMesh: 0
+--- !u!1 &1314723275 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3315857053718717566, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+    type: 3}
+  m_PrefabInstance: {fileID: 996844785}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1330183221 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3315857053718717566, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+    type: 3}
+  m_PrefabInstance: {fileID: 3315857054881593337}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1376323024
 GameObject:
   m_ObjectHideFlags: 0
@@ -3603,7 +3664,7 @@ Transform:
   - {fileID: 488863469}
   - {fileID: 2038929903}
   m_Father: {fileID: 1942770804}
-  m_RootOrder: 5
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1381373489 stripped
 Transform:
@@ -3886,6 +3947,7 @@ MonoBehaviour:
   dialogueBox: {fileID: 1735547291}
   nameText: {fileID: 228850997}
   dialogueText: {fileID: 609913568}
+  manager: {fileID: 656444300}
   empty: 0
 --- !u!4 &1500722975
 Transform:
@@ -4424,7 +4486,7 @@ RectTransform:
   - {fileID: 1735547292}
   - {fileID: 727878621}
   m_Father: {fileID: 1942770804}
-  m_RootOrder: 6
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4544,13 +4606,13 @@ Transform:
   - {fileID: 474962202}
   - {fileID: 1938555558}
   - {fileID: 161719838}
+  - {fileID: 831559648}
+  - {fileID: 634210806}
+  - {fileID: 1404094728}
   - {fileID: 1376323026}
   - {fileID: 1817266867}
   - {fileID: 965672957}
-  - {fileID: 831559648}
   - {fileID: 656444301}
-  - {fileID: 634210806}
-  - {fileID: 1404094728}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7805,7 +7867,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 240.5, y: 18.6}
-  m_SizeDelta: {x: 61.48587, y: 0}
+  m_SizeDelta: {x: 61.48587, y: 7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2126592479
 MonoBehaviour:

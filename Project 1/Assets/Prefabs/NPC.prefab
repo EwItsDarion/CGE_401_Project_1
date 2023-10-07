@@ -137,15 +137,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogues:
-  - zone: Good
+  - zone: Good1
     sentences:
-    - You#Good Test
-    - Them#Hype?
-  - zone: Great
+    - 1#You#Level 1
+    - 1#Them#Level 1
+  - zone: Great1
     sentences:
-    - You#Great Test
-    - Them#Hype?
-  - zone: Bad
+    - 1#You#Level 1
+    - 1#Them#Level 1
+  - zone: Bad1
     sentences:
-    - You#Bad Test
-    - Them#Hype?
+    - 1#Them#Level 1
+    - 1#Them#Level 1
+  - zone: Good2
+    sentences:
+    - 2#You#Level 2
+    - 2#Them#Level 2
+  - zone: Great2
+    sentences:
+    - 2#You#Level 2
+    - 2#Them#Level 2
+  - zone: Bad2
+    sentences:
+    - 2#You#Level 2
+    - 2#Them#Level 2

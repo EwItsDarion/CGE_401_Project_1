@@ -11,6 +11,7 @@ public class DialogueManager : MonoBehaviour
     public GameObject dialogueBox;
     public Text nameText;
     public Text dialogueText;
+    public GameManager manager;
     public bool empty;
 
     // Start is called before the first frame update
@@ -40,11 +41,20 @@ public class DialogueManager : MonoBehaviour
         }
 
         var sentence = sentences.Dequeue();
-
-        var split = sentence.Split('#');
         //split string into multiple parts for rendering
-        nameText.text = split[0];
-        dialogueText.text = split[1];
+        var split = sentence.Split('#');
+        print(split[0].Trim());
+        //conditional rendering for dialogue with level system
+        if (Int32.Parse(split[0]) == manager.currentLevel)
+        {
+            nameText.text = split[1];
+            dialogueText.text = split[2];
+        }
+        else
+        {
+            DisplayNextSentence();
+        }
+
     }
 
     public void EndDialogue() {

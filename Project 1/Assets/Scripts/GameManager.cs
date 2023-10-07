@@ -9,13 +9,15 @@ public class GameManager : MonoBehaviour
 {
 
     public int score;
-    //public int level; //eventual level control variable?
+    public int currentLevel; //eventual level control variable?
     public int moves;
+    public int maxLevel;
 
     public bool gameOver;
     public bool won;
 
     public Text scoreText;
+    public GameObject[] NPCS;
 
 
 
@@ -26,7 +28,7 @@ public class GameManager : MonoBehaviour
         gameOver = false;
         won = false;
         score = 0;
-        //level = 1;
+        currentLevel = 1;
         moves = 4;
     }
 
@@ -36,8 +38,15 @@ public class GameManager : MonoBehaviour
         scoreText.text = "Score: " + score;
 
         if (moves <= 0) {
-            gameOver = true;
-            if (score >= 5)
+            moves = 4;
+            currentLevel++;
+
+            foreach (var NPC in NPCS) {
+                NPC.GetComponent<BoxCollider2D>().enabled = true;
+            }
+
+            /*gameOver = true;
+            if (score >= 5) //Commented out until we finish leveling system
             { // win condition
                 scoreText.text = "You Win!\nPress R to restart";
             }
@@ -46,7 +55,7 @@ public class GameManager : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.R)) {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            }
+            }*/
         }
 
     }
