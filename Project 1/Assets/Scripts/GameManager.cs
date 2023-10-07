@@ -21,9 +21,10 @@ public class GameManager : MonoBehaviour
 
     public GameObject tutorialElements;
     public GameObject Player;
-    private DialogueTrigger cutscenes;
+    private DialogueTrigger CutsceneManager;
     public DialogueManager dialogueManager;
     private bool scenetriggered;
+    public bool cutscene;
 
 
 
@@ -36,34 +37,30 @@ public class GameManager : MonoBehaviour
         score = 0;
         currentLevel = 1;
         moves = 4;
-        cutscenes = gameObject.GetComponent<DialogueTrigger>();
+        CutsceneManager = gameObject.GetComponent<DialogueTrigger>();
         scenetriggered = false;
+        cutscene = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-/*        if (!scenetriggered) {
-            bool sceneEnded = false;
+        if (cutscene) {
             tutorialElements.SetActive(false);
             Player.SetActive(false);
-            cutscenes.TriggerDialogue("Cutscene" + currentLevel);
-            scenetriggered = true;
 
-                if (dialogueManager.empty) {
-                
-                    //reactivate tutorial elements on first level only
-                    if (currentLevel == 1) { 
-                        tutorialElements.SetActive(true);
-
-                    //allow player movement
-                    Player.SetActive(true);
-                    sceneEnded = true;
-
-             
-        }*/
-        
+            if (!scenetriggered) {
+                CutsceneManager.TriggerDialogue("Cutscene" + currentLevel);
+                scenetriggered= true;
+            }
+            if (dialogueManager.empty) {
+                if (currentLevel == 1) { 
+                    tutorialElements.SetActive(true);
+                }
+                Player.SetActive(true);
+                cutscene = false;
+            }
+        }
 
 
         scoreText.text = "Score: " + score;
@@ -71,6 +68,11 @@ public class GameManager : MonoBehaviour
         if (moves <= 0) {
             moves = 4;
             currentLevel++;
+            if (currentLevel <= 4) { 
+                cutscene = true;
+                scenetriggered = false;
+            }
+
 
             foreach (var NPC in NPCS) {
                 NPC.GetComponent<BoxCollider2D>().enabled = true;

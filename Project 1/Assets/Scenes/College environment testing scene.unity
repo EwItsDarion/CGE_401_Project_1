@@ -3113,6 +3113,24 @@ MonoBehaviour:
     - 1#God#Hey there!
     - 1#Player#What's up I guess
     - 1#God#Get goin buddy
+  - zone: Cutscene2
+    sentences:
+    - 2#Player#AH! level 2 cutscene
+    - 2#God#Hey there!
+    - 2#Player#What's up I guess
+    - 2#God#Get goin buddy
+  - zone: Cutscene3
+    sentences:
+    - 3#Player#AH!
+    - 3#God#Hey there!
+    - 3#Player#What's up I guess
+    - 3#God#Get goin buddy
+  - zone: Cutscene4
+    sentences:
+    - 4#Player#AH!
+    - 4#God#Hey there!
+    - 4#Player#What's up I guess
+    - 4#God#Get goin buddy
 --- !u!1 &678137074
 GameObject:
   m_ObjectHideFlags: 0
