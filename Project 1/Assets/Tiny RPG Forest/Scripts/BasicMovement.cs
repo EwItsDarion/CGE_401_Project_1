@@ -9,8 +9,9 @@ public class BasicMovement : MonoBehaviour
     public bool inZone;
     public bool locked = false;
     public GameObject pressEPrompt;
-    public GameObject continuePrompt;
+    public GameObject pressSpacePrompt;
     public GameObject skillCheck;
+    public GameObject WASDtutorial;
 
     private GameObject NPC;
     public DialogueManager dialogueManager;
@@ -30,6 +31,9 @@ public class BasicMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D)) { 
+            WASDtutorial.SetActive(false);
+        }
 
         if (!locked)
         {
@@ -48,13 +52,13 @@ public class BasicMovement : MonoBehaviour
         {
             skillCheck.SetActive(true);
             pressEPrompt.SetActive(false);
+            pressSpacePrompt.SetActive(true);
             locked = true;
         }
 
         if (locked) {
             if (skillCheck.GetComponent<SkillCheck>().stopped) { 
-                //continuePrompt.SetActive(true);
-
+                pressSpacePrompt.SetActive(false);
                 if (!triggeredDialogue) { 
                     NPC.GetComponent<DialogueTrigger>().TriggerDialogue(skillCheck.GetComponent<SkillCheck>().stopZone.ToString() + manager.currentLevel.ToString());
                     triggeredDialogue = true;
@@ -62,7 +66,7 @@ public class BasicMovement : MonoBehaviour
                 }
                 if (dialogueManager.empty) {
                     manager.moves--;
-                    //continuePrompt.SetActive(false);
+
                     skillCheck.GetComponent<SkillCheck>().Reset();
                     NPC.GetComponent<BoxCollider2D>().enabled= false;
                     locked = false;
