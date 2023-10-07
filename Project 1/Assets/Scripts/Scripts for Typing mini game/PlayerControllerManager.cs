@@ -11,9 +11,12 @@ public class PlayerControllerManager : MonoBehaviour
     public Text computerText;
     private string[] randomWords;
     private int randomWordIndex;
+    public int wordCount;
+    static public int successfulHitCount=0, failedHitCount=0;
     // Start is called before the first frame update
     void Start()
     {
+        wordCount = 0;
         //Asynchronous function that turns the keys back to their normal color after they have changed 
         InvokeRepeating("TurnToNormal", 0f, 1.5f);
 
@@ -24,7 +27,7 @@ public class PlayerControllerManager : MonoBehaviour
     {
        
        
-        int wordCount = computerText.text.Split(' ').Length;
+        wordCount = computerText.text.Split(' ').Length;
 
         if (wordCount > 10)
             computerText.text = "";
@@ -62,6 +65,7 @@ public class PlayerControllerManager : MonoBehaviour
                     Destroy(other.gameObject);
                     Debug.Log("Hit");
                     successfulHit = true;
+                    successfulHitCount++;
                 }
 
             }
@@ -73,6 +77,7 @@ public class PlayerControllerManager : MonoBehaviour
                     Destroy(other.gameObject);
                     Debug.Log("Hit");
                     successfulHit = true;
+                    successfulHitCount++;
                 }
             }
 
@@ -84,6 +89,7 @@ public class PlayerControllerManager : MonoBehaviour
                     Destroy(other.gameObject);
                     Debug.Log("Hit");
                     successfulHit = true;
+                    successfulHitCount++;
                 }
             }
         }

@@ -25,8 +25,10 @@ public class LetterSpawner : MonoBehaviour
         //add a 3 second delay before first spawning objects
         yield return new WaitForSeconds(3f);
 
-        while (true)
+        while (TypingMiniGameManager.gameOver==false)
         {
+            //wait before starting
+            yield return new WaitForSeconds(3.0f);
             SpawnRandomPrefab();
             float delay = 1.5f;
             yield return new WaitForSeconds(delay);

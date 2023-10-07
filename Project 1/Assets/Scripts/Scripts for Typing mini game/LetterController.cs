@@ -15,6 +15,7 @@ public class LetterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(TypingMiniGameManager.gameOver == false)
         transform.Translate(Vector3.down *  Time.deltaTime * speed);
 
         if(transform.position.y<=lowerBoundary)
