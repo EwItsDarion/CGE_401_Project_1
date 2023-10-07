@@ -178,6 +178,11 @@ PrefabInstance:
       propertyPath: computerText
       value: 
       objectReference: {fileID: 2126592479}
+    - target: {fileID: 6359980565361673058, guid: 9b4bdb89933390d49acab58b4ff396de,
+        type: 3}
+      propertyPath: pressed
+      value: 
+      objectReference: {fileID: 2100000, guid: 5498511c054caee4e94118525a32b762, type: 2}
     - target: {fileID: 6359980565361673059, guid: 9b4bdb89933390d49acab58b4ff396de,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2573,7 +2578,7 @@ GameObject:
   - component: {fileID: 678137077}
   - component: {fileID: 678137076}
   m_Layer: 5
-  m_Name: TutorialText3 (1)
+  m_Name: LettersRemainingText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2595,7 +2600,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 227.8, y: 134}
+  m_AnchoredPosition: {x: 237.7, y: 134}
   m_SizeDelta: {x: 203.93759, y: 63.178055}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &678137076
@@ -2883,6 +2888,11 @@ PrefabInstance:
       propertyPath: computerText
       value: 
       objectReference: {fileID: 2126592479}
+    - target: {fileID: 865800818308048886, guid: f42f0d1a0e12e2840a6f4fcba83df5ae,
+        type: 3}
+      propertyPath: pressed
+      value: 
+      objectReference: {fileID: 2100000, guid: 5498511c054caee4e94118525a32b762, type: 2}
     - target: {fileID: 865800818308048887, guid: f42f0d1a0e12e2840a6f4fcba83df5ae,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3298,6 +3308,7 @@ MonoBehaviour:
   tutorialText3: {fileID: 221345170}
   tutorialText4: {fileID: 2020129700}
   levelComplete: {fileID: 1743750419}
+  numberofLettersRemainingText: {fileID: 678137076}
 --- !u!1 &1217994658
 GameObject:
   m_ObjectHideFlags: 0
@@ -7958,6 +7969,11 @@ PrefabInstance:
       propertyPath: computerText
       value: 
       objectReference: {fileID: 2126592479}
+    - target: {fileID: 6359980565361673058, guid: 9b4bdb89933390d49acab58b4ff396de,
+        type: 3}
+      propertyPath: pressed
+      value: 
+      objectReference: {fileID: 2100000, guid: 5498511c054caee4e94118525a32b762, type: 2}
     - target: {fileID: 6359980565361673059, guid: 9b4bdb89933390d49acab58b4ff396de,
         type: 3}
       propertyPath: m_LocalPosition.x
