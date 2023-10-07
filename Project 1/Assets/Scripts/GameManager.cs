@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 {
 
     public int score;
-    public int currentLevel; //eventual level control variable?
+    public static int currentLevel;
     public int moves;
     public int maxLevel;
 
@@ -18,6 +18,12 @@ public class GameManager : MonoBehaviour
 
     public Text scoreText;
     public GameObject[] NPCS;
+
+    public GameObject tutorialElements;
+    public GameObject Player;
+    private DialogueTrigger cutscenes;
+    public DialogueManager dialogueManager;
+    private bool scenetriggered;
 
 
 
@@ -30,11 +36,36 @@ public class GameManager : MonoBehaviour
         score = 0;
         currentLevel = 1;
         moves = 4;
+        cutscenes = gameObject.GetComponent<DialogueTrigger>();
+        scenetriggered = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+
+/*        if (!scenetriggered) {
+            bool sceneEnded = false;
+            tutorialElements.SetActive(false);
+            Player.SetActive(false);
+            cutscenes.TriggerDialogue("Cutscene" + currentLevel);
+            scenetriggered = true;
+
+                if (dialogueManager.empty) {
+                
+                    //reactivate tutorial elements on first level only
+                    if (currentLevel == 1) { 
+                        tutorialElements.SetActive(true);
+
+                    //allow player movement
+                    Player.SetActive(true);
+                    sceneEnded = true;
+
+             
+        }*/
+        
+
+
         scoreText.text = "Score: " + score;
 
         if (moves <= 0) {

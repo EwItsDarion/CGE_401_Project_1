@@ -60,7 +60,7 @@ public class BasicMovement : MonoBehaviour
             if (skillCheck.GetComponent<SkillCheck>().stopped) { 
                 pressSpacePrompt.SetActive(false);
                 if (!triggeredDialogue) { 
-                    NPC.GetComponent<DialogueTrigger>().TriggerDialogue(skillCheck.GetComponent<SkillCheck>().stopZone.ToString() + manager.currentLevel.ToString());
+                    NPC.GetComponent<DialogueTrigger>().TriggerDialogue(skillCheck.GetComponent<SkillCheck>().stopZone.ToString() + GameManager.currentLevel.ToString());
                     triggeredDialogue = true;
                 
                 }

@@ -45,7 +45,7 @@ public class DialogueManager : MonoBehaviour
         var split = sentence.Split('#');
         print(split[0].Trim());
         //conditional rendering for dialogue with level system
-        if (Int32.Parse(split[0]) == manager.currentLevel)
+        if (Int32.Parse(split[0]) == GameManager.currentLevel)
         {
             nameText.text = split[1];
             dialogueText.text = split[2];
