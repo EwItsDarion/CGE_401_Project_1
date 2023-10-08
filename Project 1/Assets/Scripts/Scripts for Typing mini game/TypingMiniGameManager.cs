@@ -6,7 +6,7 @@ public class TypingMiniGameManager : MonoBehaviour
 {
     static public int maximumNumberofLetters,lettersRemaining;
     private float average;
-    public GameManager centralGameManager;
+  
     public Text tutorialText1, tutorialText2, tutorialText3,tutorialText4,levelComplete,numberofLettersRemainingText;
     static public bool gameOver,gameWon,gameLoss;
     // Start is called before the first frame update
@@ -15,17 +15,38 @@ public class TypingMiniGameManager : MonoBehaviour
         gameOver = false;
 
         //if it is the first level, display tutorial text
-        if (true) // if level 1
+
+       
+        if (GameManager.currentLevel == 1) // if level 1
         {
             tutorialText1.enabled = true;
+           
+            LetterController.speed = 3;
+        }
+        else
+        {
+            tutorialText1.enabled = false;
             tutorialText2.enabled = false;
             tutorialText3.enabled = false;
             tutorialText4.enabled = false;
-            maximumNumberofLetters = 10;
-            lettersRemaining = maximumNumberofLetters;
         }
 
-       
+        if(GameManager.currentLevel == 2)
+        {
+            LetterController.speed = 4;
+        }
+        else if (GameManager.currentLevel == 3)
+        {
+            LetterController.speed = 5;
+        }
+        else if (GameManager.currentLevel == 4)
+        {
+            LetterController.speed = 6;
+        }
+
+        maximumNumberofLetters = 10;
+        lettersRemaining = maximumNumberofLetters;
+     
 
         levelComplete.enabled = false;
     }
@@ -38,27 +59,31 @@ public class TypingMiniGameManager : MonoBehaviour
            "\nNumber of letters remaining: " + lettersRemaining;
 
         //If level is 1, go through tutorial
-        if (PlayerControllerManager.successfulHitCount == 7 || PlayerControllerManager.failedHitCount == 7)
+        if (GameManager.currentLevel == 1)
         {
-            tutorialText4.enabled = true;
-            tutorialText1.enabled = false;
-            tutorialText2.enabled = false;
-            tutorialText3.enabled = false;
+            if (PlayerControllerManager.successfulHitCount == 7 || PlayerControllerManager.failedHitCount == 7)
+            {
+                tutorialText4.enabled = true;
+                tutorialText1.enabled = false;
+                tutorialText2.enabled = false;
+                tutorialText3.enabled = false;
+            }
+            if (PlayerControllerManager.successfulHitCount == 5 || PlayerControllerManager.failedHitCount == 5)
+            {
+                tutorialText3.enabled = true;
+                tutorialText1.enabled = false;
+                tutorialText2.enabled = false;
+                tutorialText4.enabled = false;
+            }
+            if (PlayerControllerManager.successfulHitCount == 2 || PlayerControllerManager.failedHitCount == 2)
+            {
+                tutorialText2.enabled = true;
+                tutorialText1.enabled = false;
+                tutorialText3.enabled = false;
+                tutorialText4.enabled = false;
+            }
         }
-         if (PlayerControllerManager.successfulHitCount == 5 || PlayerControllerManager.failedHitCount == 5)
-        {
-            tutorialText3.enabled = true;
-            tutorialText1.enabled = false;
-            tutorialText2.enabled = false;
-            tutorialText4.enabled = false;
-        }
-        if (PlayerControllerManager.successfulHitCount == 2 || PlayerControllerManager.failedHitCount == 2)
-        {
-            tutorialText2.enabled = true;
-            tutorialText1.enabled = false;
-            tutorialText3.enabled = false;
-            tutorialText4.enabled = false;
-        }
+
 
         if (lettersRemaining==0)
         {

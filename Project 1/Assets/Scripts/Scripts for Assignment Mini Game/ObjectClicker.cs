@@ -15,6 +15,8 @@ public class ObjectClicker : MonoBehaviour
     {
          if(Input.GetMouseButtonDown(0))
         {
+            AssignmentMiniGameManager.successfulHits++;
+            AssignmentMiniGameManager.assignmentsRemaining--;
             Destroy(gameObject);
         }
     }

@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
         gameOver = false;
         won = false;
         score = 0;
-        currentLevel = 1;
+        currentLevel = 4;
         moves = 4;
         CutsceneManager = gameObject.GetComponent<DialogueTrigger>();
         scenetriggered = false;

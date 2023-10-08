@@ -5,7 +5,7 @@ using UnityEngine;
 public class LetterController : MonoBehaviour
 {
     private float lowerBoundary;
-    public float speed;
+    public static float speed;
     // Start is called before the first frame update
     void Start()
     {

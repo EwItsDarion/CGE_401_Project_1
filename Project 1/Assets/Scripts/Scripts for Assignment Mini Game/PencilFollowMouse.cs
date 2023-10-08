@@ -9,8 +9,9 @@ using UnityEngine;
 
 public class PencilFollowMouse : MonoBehaviour
 {
-    Vector3 cursorPosition;
-    Vector3 rotatePosition;
+   private Vector3 cursorPosition;
+   private Vector3 rotatePosition;
+    
     public float speed = 3f;
     // Update is called once per frame
     void Update()
