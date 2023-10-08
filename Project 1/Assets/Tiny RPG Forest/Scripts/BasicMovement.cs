@@ -1,29 +1,41 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.SymbolStore;
 using UnityEngine;
 using static SkillCheck;
 
 public class BasicMovement : MonoBehaviour
 {
     public Animator animator;
-    public bool inZone;
-    public bool locked = false;
-    public GameObject pressEPrompt;
-    public GameObject pressSpacePrompt;
-    public GameObject skillCheck;
-    public GameObject WASDtutorial;
 
-    private GameObject NPC;
-    public DialogueManager dialogueManager;
+    //bools
+    public bool inZone;
+    public bool inTypingZone;
+    public bool inClickingZone;
+    public bool locked = false;
     private bool triggeredDialogue;
 
+    //Prompts
+    public GameObject pressEPromptConversation;
+    public GameObject pressEPromptTypingGame;
+    public GameObject pressSpacePrompt;
+    public GameObject WASDtutorial;
+
+    //Systems
+    public GameObject skillCheck;
+    private GameObject NPC;
+    public DialogueManager dialogueManager;
     public GameManager manager;
+
+    
 
 
     public float speed = 5f;
 
     void Start() {
         inZone = false;
+        inTypingZone = false;
+        inClickingZone = false;
         
     }
 
@@ -51,9 +63,18 @@ public class BasicMovement : MonoBehaviour
         if (inZone && Input.GetKeyDown(KeyCode.E))
         {
             skillCheck.SetActive(true);
-            pressEPrompt.SetActive(false);
+            pressEPromptConversation.SetActive(false);
             pressSpacePrompt.SetActive(true);
             locked = true;
+        }
+
+        if (inTypingZone && Input.GetKeyDown(KeyCode.E))
+        {
+            manager.moves--;
+            pressEPromptTypingGame.SetActive(false);
+            manager.TypingGameGroup.SetActive(true);
+            manager.CollegeSceneGroup.SetActive(false);
+
         }
 
         if (locked) {
@@ -83,8 +104,12 @@ public class BasicMovement : MonoBehaviour
         if (other.CompareTag("NPCZone"))
         {
             inZone = true;
-            pressEPrompt.SetActive(true);
+            pressEPromptConversation.SetActive(true);
             NPC = other.gameObject;
+        }
+        if (other.CompareTag("TypingMinigameActivator")) { 
+            inTypingZone= true;
+            pressEPromptTypingGame.SetActive(true);
         }
     }
 
@@ -94,8 +119,13 @@ public class BasicMovement : MonoBehaviour
         if (other.CompareTag("NPCZone"))
         {
             inZone = false;
-            pressEPrompt.SetActive(false);
+            pressEPromptConversation.SetActive(false);
             NPC = null;
+        }
+        if (other.CompareTag("TypingMinigameActivator"))
+        {
+            inTypingZone = false;
+            pressEPromptTypingGame.SetActive(false);
         }
     }
 

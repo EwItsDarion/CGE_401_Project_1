@@ -8,6 +8,9 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
 
+    public GameObject TypingGameGroup;
+    public GameObject CollegeSceneGroup;
+
     public int score;
     public static int currentLevel;
     public int moves;

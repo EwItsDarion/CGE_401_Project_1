@@ -7,6 +7,7 @@ TagManager:
   - NPCZone
   - Walls
   - Letter
+  - TypingMinigameActivator
   layers:
   - Default
   - TransparentFX
