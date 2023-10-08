@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject tutorialElements;
     public GameObject Player;
+    public Slider timerBar;
     private DialogueTrigger CutsceneManager;
     public DialogueManager dialogueManager;
     private bool scenetriggered;
@@ -38,7 +39,7 @@ public class GameManager : MonoBehaviour
         gameOver = false;
         won = false;
         score = 0;
-        currentLevel = 4;
+        currentLevel = 1;
         moves = 4;
         CutsceneManager = gameObject.GetComponent<DialogueTrigger>();
         scenetriggered = false;
@@ -65,6 +66,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        timerBar.value = moves / 4;
 
         scoreText.text = "Score: " + score;
 
