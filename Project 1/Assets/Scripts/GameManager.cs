@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        timerBar.value = moves / 4;
+        timerBar.value = moves;
 
         scoreText.text = "Score: " + score;
 
