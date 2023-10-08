@@ -15,8 +15,6 @@ public class TypingMiniGameManager : MonoBehaviour
         gameOver = false;
 
         //if it is the first level, display tutorial text
-
-       
         if (GameManager.currentLevel == 1) // if level 1
         {
             tutorialText1.enabled = true;
