@@ -11,6 +11,7 @@ public class BasicMovement : MonoBehaviour
     //bools
     public bool inZone;
     public bool inTypingZone;
+    public bool inAssignmentZone;
     public bool inClickingZone;
     public bool locked = false;
     private bool triggeredDialogue;
@@ -18,6 +19,7 @@ public class BasicMovement : MonoBehaviour
     //Prompts
     public GameObject pressEPromptConversation;
     public GameObject pressEPromptTypingGame;
+    public GameObject pressEPromptAssignmentGame;
     public GameObject pressSpacePrompt;
     public GameObject WASDtutorial;
 
@@ -70,9 +72,17 @@ public class BasicMovement : MonoBehaviour
 
         if (inTypingZone && Input.GetKeyDown(KeyCode.E))
         {
-            manager.moves--;
             pressEPromptTypingGame.SetActive(false);
             manager.TypingGameGroup.SetActive(true);
+            manager.typingManager.StartGame();  
+            manager.CollegeSceneGroup.SetActive(false);
+
+        }
+        if (inAssignmentZone && Input.GetKeyDown(KeyCode.E))
+        {
+            pressEPromptAssignmentGame.SetActive(false);
+            manager.AssignmentGameGroup.SetActive(true);
+            manager.assignmentManager.StartGame();
             manager.CollegeSceneGroup.SetActive(false);
 
         }
@@ -111,6 +121,11 @@ public class BasicMovement : MonoBehaviour
             inTypingZone= true;
             pressEPromptTypingGame.SetActive(true);
         }
+        if (other.CompareTag("AssignmentMinigameActivator"))
+        {
+            inAssignmentZone = true;
+            pressEPromptAssignmentGame.SetActive(true);
+        }
     }
 
 
@@ -126,6 +141,11 @@ public class BasicMovement : MonoBehaviour
         {
             inTypingZone = false;
             pressEPromptTypingGame.SetActive(false);
+        }
+        if (other.CompareTag("AssignmentMinigameActivator"))
+        {
+            inAssignmentZone = false;
+            pressEPromptAssignmentGame.SetActive(false);
         }
     }
 

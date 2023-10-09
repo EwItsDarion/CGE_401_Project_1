@@ -9,7 +9,10 @@ public class GameManager : MonoBehaviour
 {
 
     public GameObject TypingGameGroup;
+    public GameObject AssignmentGameGroup;
     public GameObject CollegeSceneGroup;
+    public TypingMiniGameManager typingManager;
+    public AssignmentMiniGameManager assignmentManager;
 
 
     public static int currentLevel;
