@@ -82,7 +82,7 @@ public class BasicMovement : MonoBehaviour
         {
             pressEPromptAssignmentGame.SetActive(false);
             manager.AssignmentGameGroup.SetActive(true);
-            manager.assignmentManager.StartGame();
+            manager.assignmentManager.Start();
             manager.CollegeSceneGroup.SetActive(false);
 
         }

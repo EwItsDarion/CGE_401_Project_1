@@ -15,9 +15,9 @@ public class AssignmentMiniGameManager : MonoBehaviour
     static public bool gameOver, gameWon, gameLoss;
     public GameObject assignmentMiniGameGroup, mainCollegeGroup;   //Groups
     public GameObject centralGamemanager;
-   
 
-   public void StartGame()
+    // Start is called before the first frame update
+    public void Start()
     {
         gameOver = false;
 
