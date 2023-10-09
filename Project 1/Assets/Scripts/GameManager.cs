@@ -11,8 +11,9 @@ public class GameManager : MonoBehaviour
     public GameObject TypingGameGroup;
     public GameObject CollegeSceneGroup;
 
-    public int score;
+
     public static int currentLevel;
+    public int academicScore, socialScore;
     public int moves;
     public int maxLevel;
 
@@ -38,7 +39,7 @@ public class GameManager : MonoBehaviour
     {
         gameOver = false;
         won = false;
-        score = 0;
+        socialScore =academicScore = 0;
         currentLevel = 1;
         moves = 4;
         CutsceneManager = gameObject.GetComponent<DialogueTrigger>();
@@ -68,7 +69,7 @@ public class GameManager : MonoBehaviour
 
         timerBar.value = moves;
 
-        scoreText.text = "Score: " + score;
+        scoreText.text = "Score: " + socialScore;
 
         if (moves <= 0) {
             moves = 4;

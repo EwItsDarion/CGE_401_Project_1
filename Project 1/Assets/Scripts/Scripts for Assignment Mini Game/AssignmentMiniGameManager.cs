@@ -117,6 +117,7 @@ public class AssignmentMiniGameManager : MonoBehaviour
             }
 
         average = (successfulHits/maximumAssignments) * 100;
+        centralGamemanager.GetComponent<GameManager>().academicScore += (int)average;
         if (gameWon)
         {
             levelCompleteText.text = "Level Complete!";

@@ -67,19 +67,19 @@ public class SkillCheck : MonoBehaviour
     public void onStop() {
         if ((bar.transform.localPosition.y < -16.5 || bar.transform.localPosition.y > 16.5)) {
             stopZone = Zone.Bad;
-            manager.score--;
+            manager.socialScore--;
             Console.WriteLine("bad");
             showFeedback();
         }
         else if ((bar.transform.localPosition.y > -16.5 || bar.transform.localPosition.y < 16.5) && ((bar.transform.localPosition.y > 4 || bar.transform.localPosition.y < -4))) {
             stopZone = Zone.Good;
-            manager.score++;
+            manager.socialScore++;
             Console.WriteLine("good");
             showFeedback();
         }
         else if (bar.transform.localPosition.y < 4 || bar.transform.localPosition.y > -4) {
             stopZone = Zone.Great;
-            manager.score += 3;
+            manager.socialScore += 3;
             Console.WriteLine("great");
             showFeedback();
         }
