@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class CutsceneController_OpeningScene : MonoBehaviour
 {
     public Transform player;
-    public Transform parents;
+
     public Text nameText;
     public Text dialogueText;
     public float moveSpeed = 2f;
@@ -42,7 +42,7 @@ public class CutsceneController_OpeningScene : MonoBehaviour
     {
         // Move characters to starting positions
         Vector3 initialPlayerPosition = player.position;
-        Vector3 initialParentsPosition = parents.position;
+      
 
         // Calculate the destination position for the player
         Vector3 playerDestination = initialPlayerPosition + Vector3.up * 4.5f;
