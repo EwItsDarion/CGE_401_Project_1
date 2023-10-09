@@ -13,24 +13,24 @@ public class AssignmentMiniGameManager : MonoBehaviour
     static public float successfulHits, missedHits,average;
     public Text tutorialText1, tutorialText2, tutorialText3, ScoreText,levelCompleteText;
     static public bool gameOver, gameWon, gameLoss;
+    public GameObject assignmentMiniGameGroup, mainCollegeGroup;   //Groups
+    public GameObject centralGamemanager;
    
 
-    // Start is called before the first frame update
-    void Start()
+    void StartGame()
     {
         gameOver = false;
 
         successfulHits = missedHits = 0;
-
-
         //if it is the first level
-        if(true)//)GameManager.currentLevel==1)
+        if (GameManager.currentLevel == 1)
         {
+
+            maximumAssignments = 10;
             tutorialText1.enabled = true;
             tutorialText2.enabled = false;
             tutorialText3.enabled = false;
-            maximumAssignments = 10;
-            assignmentsRemaining = maximumAssignments;
+
         }
         else
         {
@@ -39,8 +39,24 @@ public class AssignmentMiniGameManager : MonoBehaviour
             tutorialText3.enabled = false;
         }
 
+        if (GameManager.currentLevel == 2)
+            maximumAssignments = 15;
+        else if (GameManager.currentLevel == 3)
+            maximumAssignments = 20;
+        else if (GameManager.currentLevel == 4)
+            maximumAssignments = 25;
+
+        assignmentsRemaining = maximumAssignments;
+
         //level complete text is not enabled
         levelCompleteText.enabled = false;
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+        StartGame();
     }
 
     // Update is called once per frame
@@ -48,7 +64,7 @@ public class AssignmentMiniGameManager : MonoBehaviour
     {
         ScoreText.text = "Successful Assignments: " + successfulHits + "\nFailed Assignments: " + missedHits+ "\nRemaining Assignments: "+ assignmentsRemaining;
 
-        if(true)
+        if(GameManager.currentLevel == 1)
         {
             if (successfulHits == 5 || missedHits == 5)
             {
@@ -67,7 +83,26 @@ public class AssignmentMiniGameManager : MonoBehaviour
 
         if (assignmentsRemaining == 0)
         {
-            gameOver = true;
+            FinishGame();
+
+            if (!Input.GetKeyDown(KeyCode.Space))
+            {
+                levelCompleteText.text += "\nSuccessful strokes: " + PlayerControllerManager.successfulHitCount + "\nFailed Strokes: " +
+                       PlayerControllerManager.failedHitCount + "\nAccuracy: " + average + " %" + "\nPress any key to continue";
+            }
+            else
+            {
+                assignmentMiniGameGroup.SetActive(false);
+                centralGamemanager.GetComponent<GameManager>().moves--;
+                mainCollegeGroup.SetActive(true);
+            }
+
+        }
+    }
+
+    void FinishGame()
+    {
+        gameOver = true;
             if (successfulHits > missedHits)
             {
                 gameWon = true;
@@ -87,12 +122,6 @@ public class AssignmentMiniGameManager : MonoBehaviour
                
             }
 
-            DisplayScore();
-        }
-    }
-
-    void DisplayScore()
-    {
         average = (successfulHits/maximumAssignments) * 100;
         if (gameWon)
         {
@@ -102,8 +131,9 @@ public class AssignmentMiniGameManager : MonoBehaviour
         {
             levelCompleteText.text = "Level Failed!";
         }
-        levelCompleteText.text += "\nSuccessful strokes: " + successfulHits + "\nFailed Strokes: " +
-               missedHits + "\nAccuracy: " + average + " %";
+
+
+
     }
 
 }

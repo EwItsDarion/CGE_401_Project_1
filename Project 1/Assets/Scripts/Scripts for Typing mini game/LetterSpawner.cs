@@ -15,6 +15,7 @@ public class LetterSpawner : MonoBehaviour
     private Vector3 spawnPos;
     private GameObject letter;
     private GameObject letter_Press;
+    public Text countDownText;
     void Start()
     {
         StartCoroutine(SpawnRandomPrefabwithCoroutine());
@@ -22,9 +23,20 @@ public class LetterSpawner : MonoBehaviour
 
     IEnumerator SpawnRandomPrefabwithCoroutine()
     {
-        //add a 3 second delay before first spawning objects
-        yield return new WaitForSeconds(3f);
-
+        if(GameManager.currentLevel==1)
+            yield return new WaitForSeconds(2f);
+        
+            //add a 3 second delay before first spawning objects
+            countDownText.text = "3...";
+            yield return new WaitForSeconds(1f);
+            countDownText.text = "2...";
+            yield return new WaitForSeconds(1f);
+            countDownText.text = "1...";
+            yield return new WaitForSeconds(1f);
+            countDownText.text = "GO!";
+            yield return new WaitForSeconds(1f);
+            countDownText.text = " ";
+        
         while (TypingMiniGameManager.gameOver==false)
         {
             //wait before starting

@@ -33,7 +33,7 @@ public class PlayerControllerManager : MonoBehaviour
         wordCount = computerText.text.Split(' ').Length;
 
         //Refresh computer screen with a new page
-        if (wordCount > 10)
+        if (wordCount > 5)
             computerText.text = "";
 
         //if the player types the letter at the precise moment, then the key will turn a color green

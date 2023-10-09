@@ -6,12 +6,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class SpawnManager : MonoBehaviour
 {
     public GameObject spawnZone;
     public GameObject objectBeingSpawned;
     private float upperBoundX, upperBoundY, lowerBoundX, lowerBoundY;
+    public Text countDownText;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,20 +32,29 @@ public class SpawnManager : MonoBehaviour
 
     IEnumerator SpawnObjectsInRandomPosition()
     {
-        if (GameManager.currentLevel == 1) //level is 1 create a delay
-            yield return new WaitForSeconds(2.0f);
-        while (!AssignmentMiniGameManager.gameOver)
+        if (GameManager.currentLevel == 1)
+            yield return new WaitForSeconds(5f);
+      
+            //add a 3 second delay before first spawning objects
+            countDownText.text = "3...";
+            yield return new WaitForSeconds(1f);
+            countDownText.text = "2...";
+            yield return new WaitForSeconds(1f);
+            countDownText.text = "1...";
+            yield return new WaitForSeconds(1f);
+            countDownText.text = "GO!";
+            yield return new WaitForSeconds(1f);
+            countDownText.text = " ";
+        
+
+
+        while (AssignmentMiniGameManager.gameOver==false)
         { 
             Instantiate(objectBeingSpawned, new Vector3(Random.Range(lowerBoundX, upperBoundX), Random.Range(lowerBoundY, upperBoundY), -1), objectBeingSpawned.transform.rotation);
 
-            if(GameManager.currentLevel==1)
+        
             yield return new WaitForSeconds(5.0f);
-            if (GameManager.currentLevel == 2)
-                yield return new WaitForSeconds(4.0f);
-            if (GameManager.currentLevel == 3)
-                yield return new WaitForSeconds(3.0f);
-            if (GameManager.currentLevel == 4)
-                yield return new WaitForSeconds(2.0f);
+          
         }
     }
 
