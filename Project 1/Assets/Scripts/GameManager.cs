@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
     public bool won;
 
     public Text scoreText;
+    public Text scoreText2;
+    public Text levelText;
     public GameObject[] NPCS;
 
     public GameObject tutorialElements;
@@ -53,7 +55,12 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (cutscene) {
+
+        scoreText2.text = "Academic Score: " + academicScore;
+
+        levelText.text = "Level: " + currentLevel;
+
+/*        if (cutscene) {
             tutorialElements.SetActive(false);
             Player.SetActive(false);
 
@@ -68,11 +75,11 @@ public class GameManager : MonoBehaviour
                 Player.SetActive(true);
                 cutscene = false;
             }
-        }
+        }*/
 
         timerBar.value = moves;
 
-        scoreText.text = "Score: " + socialScore;
+        scoreText.text = "Social Score: " + socialScore;
 
         if (moves <= 0) {
             moves = 4;
@@ -82,18 +89,35 @@ public class GameManager : MonoBehaviour
                 scenetriggered = false;
             }
 
+            if (currentLevel > maxLevel) {
+                gameOver = true;
 
-            foreach (var NPC in NPCS) {
-                NPC.GetComponent<BoxCollider2D>().enabled = true;
+                if (academicScore > 10000 && socialScore > 15) { 
+                    scoreText.text = "You Win!\nPress R to restart";
+                }
+                else
+                {
+                    scoreText.text = "You Lost!\nPress R to restart";
+                }
+                if(Input.GetKeyDown(KeyCode.R)) {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+                }
+
+
+                foreach (var NPC in NPCS)
+                {
+                    NPC.GetComponent<BoxCollider2D>().enabled = true;
+                }
             }
 
             /*gameOver = true;
             if (score >= 5) //Commented out until we finish leveling system
             { // win condition
-                scoreText.text = "You Win!\nPress R to restart";
+                
             }
             else {
-                scoreText.text = "You Lost!\nPress R to restart";
+                
             }
             if (Input.GetKeyDown(KeyCode.R)) {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
