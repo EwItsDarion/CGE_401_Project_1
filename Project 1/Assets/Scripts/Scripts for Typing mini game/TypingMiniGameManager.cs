@@ -12,7 +12,7 @@ public class TypingMiniGameManager : MonoBehaviour
     public GameObject typingMiniGameGroup, collegeSceneGroup;
     public GameObject centralGameManager;
     // Start is called before the first frame update
-    void Start()
+    public void StartGame()
     {
         gameOver = false;
 

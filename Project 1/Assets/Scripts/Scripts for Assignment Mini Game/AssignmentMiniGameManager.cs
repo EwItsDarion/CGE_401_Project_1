@@ -17,7 +17,7 @@ public class AssignmentMiniGameManager : MonoBehaviour
     public GameObject centralGamemanager;
    
 
-    void StartGame()
+   public void StartGame()
     {
         gameOver = false;
 
@@ -52,12 +52,6 @@ public class AssignmentMiniGameManager : MonoBehaviour
         levelCompleteText.enabled = false;
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-        StartGame();
-    }
 
     // Update is called once per frame
     void Update()

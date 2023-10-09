@@ -8,6 +8,7 @@ using UnityEngine;
 
 public class DestoryObjectAfterSeconds : MonoBehaviour
 {
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,8 +35,10 @@ public class DestoryObjectAfterSeconds : MonoBehaviour
                 yield return new WaitForSeconds(2.0f);
 
             Destroy(gameObject);
+          
             AssignmentMiniGameManager.missedHits++;
             AssignmentMiniGameManager.assignmentsRemaining-- ;
+
         }
     }
 
