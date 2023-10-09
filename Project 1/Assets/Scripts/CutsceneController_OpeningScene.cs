@@ -1,12 +1,37 @@
-﻿using System.Collections;
+﻿using JetBrains.Annotations;
+using System.Collections;
 using UnityEngine;
+using System.Linq;
+using System.Collections.Generic;
+using UnityEngine.UI;
 
-public class CutsceneController : MonoBehaviour
+public class CutsceneController_OpeningScene : MonoBehaviour
 {
     public Transform player;
     public Transform parents;
+    public Text nameText;
+    public Text dialogueText;
     public float moveSpeed = 2f;
-    public Transform dialogueTrigger; // The point where the dialogue should start.
+    public Vector3 dialogueTriggerPosition; // Use Vector3 for the trigger position
+    public GameObject dialogueCanvas;
+    public CutsceneManager cutsceneScript;
+    public LevelChangerScript levelChangerScript;
+
+
+    void Update()
+    {
+        if (cutsceneScript.isDialogueDone == true)
+        {
+            levelChangerScript.FadeToLevel(2);
+            levelChangerScript.OnFadeComplete();
+            
+            print("FADING IS COMPLETE");
+        }
+    }
+    public bool IsCutsceneActive()
+    {
+        return Vector3.Distance(player.position, dialogueTriggerPosition) > 2f;
+    }
 
     void Start()
     {
@@ -20,47 +45,34 @@ public class CutsceneController : MonoBehaviour
         Vector3 initialParentsPosition = parents.position;
 
         // Calculate the destination position for the player
-        Vector3 playerDestination = initialPlayerPosition + Vector3.up * 4f;
+        Vector3 playerDestination = initialPlayerPosition + Vector3.up * 4.5f;
 
-        // Move the player and parents
-        while (player.position != playerDestination)
+        // Start moving the player
+        while (Vector3.Distance(player.position, playerDestination) > 0.1f)
         {
             player.position = Vector3.MoveTowards(player.position, playerDestination, moveSpeed * Time.deltaTime);
-            parents.position = Vector3.MoveTowards(parents.position, initialParentsPosition, moveSpeed * Time.deltaTime);
             yield return null;
         }
 
-        // Trigger the dialogue system
-        DialogueManager dialogueManager = FindObjectOfType<DialogueManager>(); // Find your DialogueManager in the scene
-        if (dialogueManager != null)
+        // Set the player's position to the exact destination
+        player.position = playerDestination;
+
+        // Trigger the dialogue system when reaching the dialogue trigger position
+        if (Vector3.Distance(player.position, dialogueTriggerPosition) < 2f)
         {
-            // Dialogue for cutscene
-            string[] lines = new string[]
-            {
-                "1#Parent: Hello!",
-                "1#Player: Hi there!"
-                // Add the lines
-            };
+            // Find the GameObject with the name "CutsceneManager"
+            GameObject cutsceneManager = GameObject.Find("CutsceneManager");
 
-            Dialogue dialogue = new Dialogue
-            {
-                sentences = new System.Collections.Generic.List<string>(lines)
-            };
+            
+                
+            cutsceneManager.SetActive(true);
+            dialogueCanvas.SetActive(true);
+            cutsceneScript.isDialogueActive = true;
+            Debug.Log("Player position: " + player.position);
+            Debug.Log("Trigger pos: " + dialogueTriggerPosition);
+           
 
-            dialogueManager.StartDialogue(dialogue);
+ 
         }
-
-        // Wait for the conversation to end
-        while (!dialogueManager.empty)
-        {
-            yield return null;
-        }
-
-        // Move characters back to their original positions
-        player.position = initialPlayerPosition;
-        parents.position = initialParentsPosition;
-
-        // May need ot dispose of game objects like the car and parents
-        // gameObject.SetActive(false); // or Destroy(gameObject);
     }
 }

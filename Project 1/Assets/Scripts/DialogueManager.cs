@@ -17,13 +17,14 @@ public class DialogueManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sentences = new Queue<string>();    
+        sentences = new Queue<string>();
     }
 
-    public void StartDialogue(Dialogue dialogue) {
+    public void StartDialogue(Dialogue dialogue)
+    {
         dialogueBox.SetActive(true);
         sentences.Clear();
-        foreach ( var sentence in dialogue.sentences)
+        foreach (var sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
         }
@@ -32,9 +33,11 @@ public class DialogueManager : MonoBehaviour
         DisplayNextSentence();
     }
 
-    public void DisplayNextSentence() { 
-        
-        if (sentences.Count == 0) {
+    public void DisplayNextSentence()
+    {
+
+        if (sentences.Count == 0)
+        {
             empty = true;
             EndDialogue();
             return;
@@ -45,11 +48,13 @@ public class DialogueManager : MonoBehaviour
         var split = sentence.Split('#');
         print(split[0].Trim());
         //conditional rendering for dialogue with level system
-        if (Int32.Parse(split[0]) == GameManager.currentLevel)
+        int level;
+        if (int.TryParse(split[0], out level) && level == GameManager.currentLevel)
         {
             nameText.text = split[1];
             dialogueText.text = split[2];
         }
+
         else
         {
             DisplayNextSentence();
@@ -57,7 +62,8 @@ public class DialogueManager : MonoBehaviour
 
     }
 
-    public void EndDialogue() {
+    public void EndDialogue()
+    {
         dialogueBox.SetActive(false);
         Debug.Log("End Conversation");
     }
