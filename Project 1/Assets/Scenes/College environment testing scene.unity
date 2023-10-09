@@ -933,6 +933,200 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC_Daniel
       objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[6].sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[7].sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[8].sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[9].sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[10].sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[11].sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[6].zone
+      value: Good3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[6].sentences.Array.data[0]
+      value: 2#Daniel#Cooking? It's a necessary skill; I just stick to ordering takeout.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[6].sentences.Array.data[1]
+      value: 2#Daniel#I need more protein!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[7].zone
+      value: Great3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[7].sentences.Array.data[0]
+      value: 2#Daniel#Cooking? I admire people who can cook. Let's have a cook-off
+        sometime; I'm eager to learn.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[7].sentences.Array.data[1]
+      value: 2#Daniel#Make me a really healthy meal!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[8].zone
+      value: Bad3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[8].sentences.Array.data[0]
+      value: 2#Daniel#Cooking, huh? Well, I hope you're better at it than I am. Can't
+        even boil an egg.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[8].sentences.Array.data[1]
+      value: 2#Daniel#I once burned my house down.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[9].zone
+      value: Good4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[9].sentences.Array.data[0]
+      value: 2#Daniel#Chess? That's a real mental game. I prefer something more physical.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[9].sentences.Array.data[1]
+      value: 2#Daniel#I've played a bit.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[10].zone
+      value: Great4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[10].sentences.Array.data[0]
+      value: 2#Daniel#Chess is fun, I guess, but it's not exactly thrilling like a
+        good game of football.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[10].sentences.Array.data[1]
+      value: 2#Daniel#Isn't it kind of boring?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[11].zone
+      value: Bad4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[11].sentences.Array.data[0]
+      value: 2#Daniel#Chess? That's impressive! Let's have a strategic match sometime;
+        I bet you'll give me a run for my money.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[11].sentences.Array.data[1]
+      value: 2#Them#Play chess.com and start your free trial today.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[0].sentences.Array.data[0]
+      value: 1#Daniel#You're into basketball? It's a decent sport; I prefer football,
+        though.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[0].sentences.Array.data[1]
+      value: 1#Daniel#I can dunk you bro!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[1].sentences.Array.data[0]
+      value: 1#Daniel#Basketball? Awesome! We should shoot some hoops together; I
+        can give you a few pointers.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[1].sentences.Array.data[1]
+      value: 1#Daniel#Let's get a game going RIGHT NOW!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[2].sentences.Array.data[0]
+      value: 1#Daniel#Basketball, huh? Well, it's fun, I guess, but you'll need some
+        serious practice.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[2].sentences.Array.data[1]
+      value: 1#Daniel#Aren't you a little short to be playing that game?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[3].sentences.Array.data[0]
+      value: 2#Daniel#Photography is interesting. You must have some cool pictures
+        to share.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[3].sentences.Array.data[1]
+      value: 2#Daniel#Take a look at this cute picture of my dog.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[4].sentences.Array.data[0]
+      value: 2#Daniel#Photography? That's intriguing! Let's go on a photography walk,
+        capture some moments together.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[4].sentences.Array.data[1]
+      value: 2#Daniel#I want to take so many pictures of stray cats!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[5].sentences.Array.data[0]
+      value: 2#You#Photography, really? Well, I suppose it's a way to capture memories.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[5].sentences.Array.data[1]
+      value: 2#Them#Who cares if it isn't a protein shake?
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88842c6c9ab1d0a41854c8b49294ce3d, type: 3}
 --- !u!1 &346128407
@@ -1466,33 +1660,200 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
         type: 3}
+      propertyPath: dialogues.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[6].sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[7].sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[8].sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[9].sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[10].sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[11].sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
       propertyPath: dialogues.Array.data[0].sentences.Array.data[0]
-      value: 1#You#Good Test
+      value: 1#Olivia#Meditation? It's good to find inner peace, I suppose. How do
+        you like to relax?
       objectReference: {fileID: 0}
     - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
         type: 3}
       propertyPath: dialogues.Array.data[0].sentences.Array.data[1]
-      value: 1#Them#Hype?
+      value: 1#Olivia#Personally, I like love a mani-pedi.
       objectReference: {fileID: 0}
     - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
         type: 3}
       propertyPath: dialogues.Array.data[1].sentences.Array.data[0]
-      value: 1#You#Great Test
+      value: 1#Olivia#Meditation is wonderful! We should meditate together and discuss
+        life's secrets.
       objectReference: {fileID: 0}
     - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
         type: 3}
       propertyPath: dialogues.Array.data[1].sentences.Array.data[1]
-      value: 1#Them#Hype?
+      value: 1#Olivia#I've been holding this one secret about Tiffany.. Let's chat
       objectReference: {fileID: 0}
     - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
         type: 3}
       propertyPath: dialogues.Array.data[2].sentences.Array.data[0]
-      value: 1#You#Bad Test
+      value: 1#Olivia#Meditation, huh? Well, it's great for reducing stress, but it's
+        not exactly party material.
       objectReference: {fileID: 0}
     - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
         type: 3}
       propertyPath: dialogues.Array.data[2].sentences.Array.data[1]
-      value: 1#Them#Hype?
+      value: 1#Olivia#Ew.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[6].zone
+      value: Good3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[6].sentences.Array.data[0]
+      value: 2#Olivia#Astronomy? It's a bit distant for me, but fascinating. What
+        got you into it?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[6].sentences.Array.data[1]
+      value: 2#Olivia#I think my mom is a Pisces?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[7].zone
+      value: Great3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[7].sentences.Array.data[0]
+      value: 2#Olivia#Astronomy is amazing! Let's stargaze together, find constellations,
+        and ponder the universe.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[7].sentences.Array.data[1]
+      value: 2#Olivia#I'm a Capricorn rising.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[8].zone
+      value: Bad3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[8].sentences.Array.data[0]
+      value: 2#Olivia#Astronomy? Well, it's interesting, but there are more down-to-earth
+        hobbies.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[8].sentences.Array.data[1]
+      value: 2#Olivia#Not interested.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[9].zone
+      value: Good4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[9].sentences.Array.data[0]
+      value: 2#Olivia#Science fiction? It's a genre for the imaginative. Any favorite
+        books?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[9].sentences.Array.data[1]
+      value: 2#Olivia#I love the Harry Potter series.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[10].zone
+      value: Great4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[10].sentences.Array.data[0]
+      value: 2#Olivia#Science fiction literature? That's fantastic! Let's dive into
+        some epic sci-fi novels together and discuss them.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[10].sentences.Array.data[1]
+      value: 2#Olivia#I'm a Hufflepuff!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[11].zone
+      value: Bad4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[11].sentences.Array.data[0]
+      value: 2#Olivia#Science fiction literature? Well, it's a bit out there, but
+        to each their own.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[11].sentences.Array.data[1]
+      value: 2#Olivia#You're kind of nerdy.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[3].sentences.Array.data[0]
+      value: 2#Olivia#Chess? It's a game of strategy, but I prefer games with a bit
+        more excitement.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[3].sentences.Array.data[1]
+      value: 2#Olivia#Did you hear about the new hot gossip?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[4].sentences.Array.data[0]
+      value: 2#Olivia#Chess, you say? That's intriguing! Let's have a match and see
+        who outsmarts the other.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[4].sentences.Array.data[1]
+      value: 2#Olivia#My favorite piece is the queen, obviously.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[5].sentences.Array.data[0]
+      value: 2#Olivia#Chess? Well, it's a game, I guess, but there are more exciting
+        ways to spend your time.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[5].sentences.Array.data[1]
+      value: 2#Olivia#Like getting a massage or getting your nails done.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88842c6c9ab1d0a41854c8b49294ce3d, type: 3}
@@ -3271,7 +3632,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4510,6 +4871,208 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NPC_Sarah
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[6].sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[7].sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[8].sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[9].sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[10].sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[11].sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[0].sentences.Array.data[0]
+      value: 1#Sarah#You're into books? That's cool. I'm more of a classic literature
+        person myself, but it's nice to see someone trying.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[6].zone
+      value: Good3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[6].sentences.Array.data[0]
+      value: 2#Sarah#Baking? That's nice. I guess we could share some recipes if you
+        want.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[6].sentences.Array.data[1]
+      value: 2#Sarah#I make a pretty good pasta alfredo.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[7].zone
+      value: Great3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[7].sentences.Array.data[0]
+      value: 2#Sarah#Baking is my passion too! Let's have a bake-off someday; I'd
+        love to learn from each other.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[7].sentences.Array.data[1]
+      value: 2#Sarah#Almond cookies are my favorite!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[8].zone
+      value: Bad3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[8].sentences.Array.data[0]
+      value: 2#Sarah#You like baking? Well, as long as you don't burn the cookies,
+        right?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[8].sentences.Array.data[1]
+      value: 2#Sarah#Gordon Ramsey wouldn't approve of this.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[9].zone
+      value: Good4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[9].sentences.Array.data[0]
+      value: 2#Sarah#Mountaineering? Well, that's quite the adventurous hobby you've
+        got there.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[9].sentences.Array.data[1]
+      value: 2#Sarah#Don't hurt yourself.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[10].zone
+      value: Great4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[10].sentences.Array.data[0]
+      value: 2#You#You're into mountaineering? That's incredible! Maybe one day we
+        can conquer a summit together.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[10].sentences.Array.data[1]
+      value: 2#Them#I love mountain biking! It gets the blood boiling!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[11].zone
+      value: Bad4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[11].sentences.Array.data[0]
+      value: 2#Sarah#Climbing mountains? Really? I mean, I guess it's an accomplishment,
+        but isn't it a bit extreme?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[11].sentences.Array.data[1]
+      value: 2#Sarah#That's just way too scary.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[0].sentences.Array.data[1]
+      value: 1#Sarah#My name is Sarah, by the way.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[1].sentences.Array.data[0]
+      value: 1#Sarah#Wow, you enjoy reading? That's fantastic! We should swap recommendations
+        sometime. It's so refreshing to meet a fellow book lover.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[1].sentences.Array.data[1]
+      value: 1#Sarah#You seem pretty cool.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[2].sentences.Array.data[0]
+      value: 1#Sarah#Oh, you like reading too? Well, I guess it's a start, but maybe
+        pick up something other than a comic book next time.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[2].sentences.Array.data[1]
+      value: 1#Sarah#I'm a sophisticated girl..
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[3].sentences.Array.data[0]
+      value: 2#Sarah#Hiking, huh? Not really my thing, but I suppose it's a good way
+        to stay in shape.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[3].sentences.Array.data[1]
+      value: 2#Sarah#But I'm always in shape so I don't need much exercise.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[4].sentences.Array.data[0]
+      value: 2#Sarah#Hiking? I've heard it's good exercise, but let's be honest, the
+        outdoors can be so... dirty.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[4].sentences.Array.data[1]
+      value: 2#Sarah#You smell like you just got back from a hike.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[5].zone
+      value: Great2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[5].sentences.Array.data[0]
+      value: 2#Sarah#Hiking is amazing! The tranquility of nature, the fresh air,
+        and the exercise. We should go on a hike together sometime!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[5].sentences.Array.data[1]
+      value: 2#Them#I can picture us now climbing the tallest mountains!
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88842c6c9ab1d0a41854c8b49294ce3d, type: 3}
@@ -7062,7 +7625,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1942770804
 Transform:
   m_ObjectHideFlags: 0
@@ -10837,6 +11400,200 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NPC_Alex
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[6].sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[7].sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[8].sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[9].sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[10].sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[11].sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[6].zone
+      value: Good3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[6].sentences.Array.data[0]
+      value: 2#Alex#Painting? That's interesting. What kind of art do you create?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[6].sentences.Array.data[1]
+      value: 2#Them#I drew a butterfly once.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[7].zone
+      value: Great3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[7].sentences.Array.data[0]
+      value: 2#Alex#Painting is fantastic! Let's have an art session together, share
+        our techniques and ideas.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[7].sentences.Array.data[1]
+      value: 2#Alex#Let's go out and paint a mural!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[8].zone
+      value: Bad3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[8].sentences.Array.data[0]
+      value: 2#Alex#You're into painting? Well, it's a way to express yourself, even
+        if it's not for everyone.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[8].sentences.Array.data[1]
+      value: 2#Alex#I bet you can't paint this rock..
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[9].zone
+      value: Good4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[9].sentences.Array.data[0]
+      value: 2#Alex#Filmmaking, huh? It's a lot of work, but it can be rewarding.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[9].sentences.Array.data[1]
+      value: 2#Alex#I shot a short film for a class once.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[10].zone
+      value: Great4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[10].sentences.Array.data[0]
+      value: 2#Alex#Filmmaking is your passion? That's amazing! Let's collaborate
+        on a project someday; I'd love to see your creativity at work.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[10].sentences.Array.data[1]
+      value: 2#Alex#Just make sure I'm the main actor!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[11].zone
+      value: Bad4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[11].sentences.Array.data[0]
+      value: 2#Alex#You enjoy filmmaking? I suppose everyone needs a hobby, right?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[11].sentences.Array.data[1]
+      value: 2#Alex#Just don't start recording me, okay?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[0].sentences.Array.data[0]
+      value: 1#Alex#You're into music? Cool, cool. So, what's your favorite genre?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[0].sentences.Array.data[1]
+      value: 1#Alex#I like smooth jazz.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[1].sentences.Array.data[0]
+      value: 1#Alex#You love music too? That's awesome! We should jam sometime, really
+        get the creative juices flowing
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[1].sentences.Array.data[1]
+      value: 1#Alex#I'm really great with the violin!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[2].sentences.Array.data[0]
+      value: 1#Alex#Music, huh? Well, not everyone can be a virtuoso. Maybe stick
+        to the shower concerts.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[2].sentences.Array.data[1]
+      value: 1#Alex#This next part is a solo. Try not to get in the way.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[3].sentences.Array.data[0]
+      value: 2#Alex#Tabletop games? I've dabbled, I suppose. It's a way to pass the
+        time.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[3].sentences.Array.data[1]
+      value: 2#Alex#I wish I could be a dungeon master.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[4].sentences.Array.data[0]
+      value: 2#Alex#Tabletop games? Those are a blast! Let's get a game night going
+        with friends.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[4].sentences.Array.data[1]
+      value: 2#Alex#I have a level 40 hexblade warlock OC tiefling half orc multiclassing
+        warrior!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[5].sentences.Array.data[0]
+      value: 2#Alex#Tabletop games are fun, I guess, but why not try something more
+        artsy and less nerdy?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295837329304785983, guid: 88842c6c9ab1d0a41854c8b49294ce3d,
+        type: 3}
+      propertyPath: dialogues.Array.data[5].sentences.Array.data[1]
+      value: 2#Alex#(whispers) If only they knew...
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88842c6c9ab1d0a41854c8b49294ce3d, type: 3}
