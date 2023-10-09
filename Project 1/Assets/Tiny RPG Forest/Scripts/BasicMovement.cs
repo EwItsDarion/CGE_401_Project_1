@@ -74,7 +74,7 @@ public class BasicMovement : MonoBehaviour
         {
             pressEPromptTypingGame.SetActive(false);
             manager.TypingGameGroup.SetActive(true);
-            manager.typingManager.StartGame();  
+            manager.typingManager.StartGame();
             manager.CollegeSceneGroup.SetActive(false);
 
         }
