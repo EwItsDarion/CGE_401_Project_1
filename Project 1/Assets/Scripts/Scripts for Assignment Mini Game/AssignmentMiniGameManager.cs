@@ -81,8 +81,8 @@ public class AssignmentMiniGameManager : MonoBehaviour
 
             if (!Input.GetKeyDown(KeyCode.Space))
             {
-                levelCompleteText.text += "\nSuccessful strokes: " + PlayerControllerManager.successfulHitCount + "\nFailed Strokes: " +
-                       PlayerControllerManager.failedHitCount + "\nAccuracy: " + average + " %" + "\nPress any key to continue";
+                levelCompleteText.text += "\nSuccessful assignments: " + successfulHits + "\nFailed assignments: " +
+                     missedHits + "\nAccuracy: " + average + " %" + "\nPress space to continue";
             }
             else
             {
@@ -116,7 +116,7 @@ public class AssignmentMiniGameManager : MonoBehaviour
                
             }
 
-        average = (successfulHits/maximumAssignments) * 100;
+        average = (successfulHits/maximumAssignments);
         centralGamemanager.GetComponent<GameManager>().academicScore += (int)average;
         if (gameWon)
         {
