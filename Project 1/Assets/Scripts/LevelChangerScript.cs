@@ -23,13 +23,11 @@ public class LevelChangerScript : MonoBehaviour
     {
         ActiveCredits.SetActive(true);
         ActiveMainMenu.SetActive(false);
-
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            ActiveCredits.SetActive(false);
-            ActiveMainMenu.SetActive(true);
-        }
-
+    }
+    public void showMenu()
+    {
+        ActiveCredits.SetActive(false);
+        ActiveMainMenu.SetActive(true);
     }
 
     public void quitGame()
