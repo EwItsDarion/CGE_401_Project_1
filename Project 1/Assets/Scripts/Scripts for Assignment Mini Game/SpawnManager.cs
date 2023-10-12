@@ -14,7 +14,7 @@ public class SpawnManager : MonoBehaviour
     private float upperBoundX, upperBoundY, lowerBoundX, lowerBoundY;
     public Text countDownText;
     // Start is called before the first frame update
-    void Start()
+    public void StartSpawn()
     {
         //get spawn boundaries
         lowerBoundX = spawnZone.GetComponent<Transform>().position.x;
@@ -50,7 +50,7 @@ public class SpawnManager : MonoBehaviour
 
         while (AssignmentMiniGameManager.gameOver==false)
         { 
-            Instantiate(objectBeingSpawned, new Vector3(Random.Range(lowerBoundX, upperBoundX), Random.Range(lowerBoundY, upperBoundY), -1), objectBeingSpawned.transform.rotation);
+            Instantiate(objectBeingSpawned, new Vector3(Random.Range(lowerBoundX, upperBoundX), Random.Range(lowerBoundY, upperBoundY), -10), objectBeingSpawned.transform.rotation);
 
         
             yield return new WaitForSeconds(5.0f);

@@ -14,19 +14,20 @@ public class AssignmentMiniGameManager : MonoBehaviour
     public Text tutorialText1, tutorialText2, tutorialText3, ScoreText,levelCompleteText;
     static public bool gameOver, gameWon, gameLoss;
     public GameObject assignmentMiniGameGroup, mainCollegeGroup;   //Groups
-    public GameObject centralGamemanager;
+    public GameObject centralGamemanager, assignmentSpawnManager;
+    private static int levelOfDifficulty = 1;
 
     // Start is called before the first frame update
-    public void Start()
+    public void StartGame()
     {
         gameOver = false;
 
         successfulHits = missedHits = 0;
         //if it is the first level
-        if (GameManager.currentLevel == 1)
+        if (levelOfDifficulty == 1)
         {
 
-            maximumAssignments = 10;
+         
             tutorialText1.enabled = true;
             tutorialText2.enabled = false;
             tutorialText3.enabled = false;
@@ -39,14 +40,14 @@ public class AssignmentMiniGameManager : MonoBehaviour
             tutorialText3.enabled = false;
         }
 
-        if (GameManager.currentLevel == 2)
-            maximumAssignments = 15;
-        else if (GameManager.currentLevel == 3)
-            maximumAssignments = 20;
-        else if (GameManager.currentLevel == 4)
-            maximumAssignments = 25;
+        //Increase assignments 
+        maximumAssignments = levelOfDifficulty * 5;
 
         assignmentsRemaining = maximumAssignments;
+
+        assignmentSpawnManager.GetComponent<SpawnManager>().StartSpawn();
+
+       
 
         //level complete text is not enabled
         levelCompleteText.enabled = false;
@@ -58,15 +59,15 @@ public class AssignmentMiniGameManager : MonoBehaviour
     {
         ScoreText.text = "Successful Assignments: " + successfulHits + "\nFailed Assignments: " + missedHits+ "\nRemaining Assignments: "+ assignmentsRemaining;
 
-        if(GameManager.currentLevel == 1)
+        if(levelOfDifficulty == 1)
         {
-            if (successfulHits == 5 || missedHits == 5)
+            if (successfulHits == 4 || missedHits == 4)
             {
                 tutorialText1.enabled = false;
                 tutorialText2.enabled = false;
                 tutorialText3.enabled = true;
             }
-            if (successfulHits == 3 || missedHits == 3)
+            if (successfulHits == 2 || missedHits == 2)
             {
                 tutorialText1.enabled = false;
                 tutorialText2.enabled = true;
@@ -88,6 +89,9 @@ public class AssignmentMiniGameManager : MonoBehaviour
             {
                 assignmentMiniGameGroup.SetActive(false);
                 centralGamemanager.GetComponent<GameManager>().moves--;
+                if(gameWon)
+                    levelOfDifficulty += 1;
+
                 mainCollegeGroup.SetActive(true);
             }
 
@@ -110,17 +114,18 @@ public class AssignmentMiniGameManager : MonoBehaviour
 
             if (GameManager.currentLevel==1)
             {
-                tutorialText2.enabled = false;
                 tutorialText1.enabled = false;
+                tutorialText2.enabled = false;
                 tutorialText3.enabled = false;
                
             }
 
-        average = (successfulHits/maximumAssignments);
+        average = (successfulHits/maximumAssignments)*100;
         centralGamemanager.GetComponent<GameManager>().academicScore += (int)average;
         if (gameWon)
         {
             levelCompleteText.text = "Level Complete!";
+          
         }
         else
         {
