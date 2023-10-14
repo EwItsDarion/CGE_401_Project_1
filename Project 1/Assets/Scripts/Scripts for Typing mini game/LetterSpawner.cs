@@ -59,13 +59,13 @@ public class LetterSpawner : MonoBehaviour
         {
             letter_Press = GameObject.Find("Typing matcher (A)");
         }
-        else if (letter.name == "Letter B")
+        else if (letter.name == "Letter D")
         {
             letter_Press = GameObject.Find("Typing matcher (D)");
         }
         else
         {
-            letter_Press = GameObject.Find("Typing matcher (B)");
+            letter_Press = GameObject.Find("Typing matcher (S)");
         }
   
         spawnPos = new Vector3(letter_Press.transform.position.x-.10f, letter_Press.transform.position.y + 20, letter_Press.transform.position.z-.5f);

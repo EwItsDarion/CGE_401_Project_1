@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5053747306878612105}
   - component: {fileID: 54455054471725330}
   m_Layer: 5
-  m_Name: Letter B
+  m_Name: Letter S
   m_TagString: Letter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68,7 +68,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97b1a59fdbdad3e4c8ea7b16b91223fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
 --- !u!212 &5053747306878612105
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -106,12 +105,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fa981a2d006c1854f858896be575868d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3d008dd39826644479be74c7996b3bd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 4, y: 4}
+  m_Size: {x: 3, y: 3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

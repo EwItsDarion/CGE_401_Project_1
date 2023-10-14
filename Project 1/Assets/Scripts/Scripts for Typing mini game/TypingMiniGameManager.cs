@@ -58,7 +58,7 @@ public class TypingMiniGameManager : MonoBehaviour
 
 
         //If level is 1, go through tutorial
-        if (GameManager.currentLevel == 1)
+        if (levelOfDifficulty == 1)
         {
             if (PlayerControllerManager.successfulHitCount == 4 || PlayerControllerManager.failedHitCount == 4)
             {

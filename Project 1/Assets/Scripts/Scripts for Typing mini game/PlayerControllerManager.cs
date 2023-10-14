@@ -75,9 +75,9 @@ public class PlayerControllerManager : MonoBehaviour
                 }
 
             }
-            else if (other.gameObject.name == "Letter B(Clone)")
+            else if (other.gameObject.name == "Letter S(Clone)")
             {
-                if (Input.GetKey(KeyCode.B))
+                if (Input.GetKey(KeyCode.S))
                 {
                     computerText.text += randomWords[randomWordIndex] + " ";
                     Destroy(other.gameObject);
