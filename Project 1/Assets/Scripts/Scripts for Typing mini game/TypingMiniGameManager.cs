@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -100,6 +101,8 @@ public class TypingMiniGameManager : MonoBehaviour
                     Destroy(letter);
                 typingMiniGameGroup.SetActive(false);
 
+                centralGameManager.GetComponent<GameManager>().academicScore += ((int)Math.Round(average)); //Add grade percentage to overall score
+
                 //increase level of difficulty
                 levelOfDifficulty++;
 
@@ -131,10 +134,9 @@ public class TypingMiniGameManager : MonoBehaviour
         tutorialText3.enabled = false;
         tutorialText4.enabled = false;
 
-        average = (PlayerControllerManager.successfulHitCount / maximumNumberofLetters) * 100;
-        centralGameManager.GetComponent<GameManager>().academicScore += (int)average;
 
-       
+
+        average = (PlayerControllerManager.successfulHitCount / maximumNumberofLetters) * 100;
 
         if (gameWon)
         {

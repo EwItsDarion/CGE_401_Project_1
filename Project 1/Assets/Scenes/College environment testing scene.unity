@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7204,22 +7204,37 @@ PrefabInstance:
     - target: {fileID: 5547859277490940440, guid: bab555c2b9f5026449e6203187085e2a,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -90.31
+      value: -76.5
       objectReference: {fileID: 0}
     - target: {fileID: 5547859277490940440, guid: bab555c2b9f5026449e6203187085e2a,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 53.36
+      value: 32.995
       objectReference: {fileID: 0}
     - target: {fileID: 5547859277490940440, guid: bab555c2b9f5026449e6203187085e2a,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 291.37122
+      value: 319.04736
       objectReference: {fileID: 0}
     - target: {fileID: 5547859277490940440, guid: bab555c2b9f5026449e6203187085e2a,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 151.02814
+      value: 191.75894
+      objectReference: {fileID: 0}
+    - target: {fileID: 5547859277490940441, guid: bab555c2b9f5026449e6203187085e2a,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5547859277490940441, guid: bab555c2b9f5026449e6203187085e2a,
+        type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 5547859277490940441, guid: bab555c2b9f5026449e6203187085e2a,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bab555c2b9f5026449e6203187085e2a, type: 3}
