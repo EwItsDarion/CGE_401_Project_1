@@ -31,6 +31,8 @@ public class GameManager : MonoBehaviour
     public GameObject tutorialElements;
     public GameObject Player;
     public Slider timerBar;
+    public Slider academicBar;
+    public Slider socialBar;
     private DialogueTrigger CutsceneManager;
     public DialogueManager dialogueManager;
     private bool scenetriggered;
@@ -55,7 +57,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        socialBar.value = socialScore;
+        academicBar.value = academicScore;
         scoreText2.text = "Academic Score: " + academicScore;
 
         levelText.text = "Level: " + currentLevel;
