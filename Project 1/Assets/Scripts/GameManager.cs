@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
     {
         gameOver = false;
         won = false;
-        socialScore =academicScore = 0;
+        socialScore = academicScore = 0;
         currentLevel = 1;
         moves = 4;
         CutsceneManager = gameObject.GetComponent<DialogueTrigger>();
@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
 
         levelText.text = "Level: " + currentLevel;
 
-/*        if (cutscene) {
+        if (cutscene) {
             tutorialElements.SetActive(false);
             Player.SetActive(false);
 
@@ -78,7 +78,7 @@ public class GameManager : MonoBehaviour
                 Player.SetActive(true);
                 cutscene = false;
             }
-        }*/
+        }
 
         timerBar.value = moves;
 
