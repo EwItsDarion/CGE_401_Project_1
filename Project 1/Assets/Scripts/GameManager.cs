@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-
+    public MoveSystem moveSystem;
     public GameObject TypingGameGroup;
     public GameObject AssignmentGameGroup;
     public GameObject CollegeSceneGroup;
@@ -80,12 +80,13 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        timerBar.value = moves;
+        //timerBar.value = moves;
 
         scoreText.text = "Social Score: " + socialScore;
 
         if (moves <= 0) {
             moves = 4;
+            moveSystem.ResetMoves();
             currentLevel++;
             if (currentLevel <= 4) { 
                 cutscene = true;
