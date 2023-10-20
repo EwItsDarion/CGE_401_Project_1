@@ -55,6 +55,12 @@ TagManager:
   - name: NonTilemapObj
     uniqueID: 2533076793
     locked: 0
+  - name: Decoration
+    uniqueID: 622047129
+    locked: 0
+  - name: Desks
+    uniqueID: 1706339689
+    locked: 0
   - name: Walls
     uniqueID: 2012497491
     locked: 0
