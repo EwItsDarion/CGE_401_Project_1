@@ -3,6 +3,7 @@
  * Manages assignment mini game and tutorial system
  */
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -78,6 +79,7 @@ public class AssignmentMiniGameManager : MonoBehaviour
 
         if (assignmentsRemaining == 0)
         {
+            gameOver = true;
             FinishGame();
 
             if (!Input.GetKeyDown(KeyCode.Space))
@@ -89,7 +91,10 @@ public class AssignmentMiniGameManager : MonoBehaviour
             {
                 assignmentMiniGameGroup.SetActive(false);
                 centralGamemanager.GetComponent<GameManager>().moves--;
-                if(gameWon)
+
+                centralGamemanager.GetComponent<GameManager>().FindAverage((int)Math.Round(average)); //Add grade percentage to overall score
+
+                if (gameWon)
                     levelOfDifficulty += 1;
 
                 mainCollegeGroup.SetActive(true);
@@ -100,7 +105,7 @@ public class AssignmentMiniGameManager : MonoBehaviour
 
     void FinishGame()
     {
-        gameOver = true;
+      
             if (successfulHits > missedHits)
             {
                 gameWon = true;
@@ -112,7 +117,9 @@ public class AssignmentMiniGameManager : MonoBehaviour
 
             levelCompleteText.enabled = true;
 
-            if (GameManager.currentLevel==1)
+        average = (successfulHits/maximumAssignments) * 100;
+
+        if (GameManager.currentLevel==1)
             {
                 tutorialText1.enabled = false;
                 tutorialText2.enabled = false;
@@ -120,8 +127,6 @@ public class AssignmentMiniGameManager : MonoBehaviour
                
             }
 
-        average = (successfulHits/maximumAssignments)*100;
-        centralGamemanager.GetComponent<GameManager>().academicScore += (int)average;
         if (gameWon)
         {
             levelCompleteText.text = "Level Complete!";

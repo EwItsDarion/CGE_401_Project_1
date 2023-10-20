@@ -39,8 +39,9 @@ public class GameManager : MonoBehaviour
     public bool cutscene;
 
 
-
-    
+    private int numberOfAssigments;
+    private int totalScore;
+    private int average;
     // Start is called before the first frame update
     void Awake()
     {
@@ -52,6 +53,9 @@ public class GameManager : MonoBehaviour
         CutsceneManager = gameObject.GetComponent<DialogueTrigger>();
         scenetriggered = false;
         cutscene = true;
+        numberOfAssigments = 0;
+        totalScore = 0;
+        average = 0;
     }
 
     // Update is called once per frame
@@ -129,4 +133,16 @@ public class GameManager : MonoBehaviour
         }
 
     }
+
+    public void FindAverage(int newGrade)
+    {
+        numberOfAssigments++;
+
+        totalScore += newGrade;
+
+        average = totalScore / numberOfAssigments;
+
+        academicScore = average;
+    }
+
 }

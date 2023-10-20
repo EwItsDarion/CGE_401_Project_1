@@ -101,7 +101,7 @@ public class TypingMiniGameManager : MonoBehaviour
                     Destroy(letter);
                 typingMiniGameGroup.SetActive(false);
 
-                centralGameManager.GetComponent<GameManager>().academicScore += ((int)Math.Round(average)); //Add grade percentage to overall score
+                centralGameManager.GetComponent<GameManager>().FindAverage((int)Math.Round(average)); //Add grade percentage to overall score
 
                 //increase level of difficulty
                 levelOfDifficulty++;
