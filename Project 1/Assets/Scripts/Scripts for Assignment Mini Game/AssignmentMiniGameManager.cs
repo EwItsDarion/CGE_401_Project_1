@@ -13,16 +13,16 @@ public class AssignmentMiniGameManager : MonoBehaviour
     static public int maximumAssignments, assignmentsRemaining;
     static public float successfulHits, missedHits,average;
     public Text tutorialText1, tutorialText2, tutorialText3, ScoreText,levelCompleteText;
-    static public bool gameOver, gameWon, gameLoss;
+    static public bool gameOver, gameWon, gameLoss,objectDestroyed;
     public GameObject assignmentMiniGameGroup, mainCollegeGroup;   //Groups
     public GameObject centralGamemanager, assignmentSpawnManager;
-    private static int levelOfDifficulty = 1;
+    public static int levelOfDifficulty = 1;
 
     // Start is called before the first frame update
     public void StartGame()
     {
         gameOver = false;
-
+        
         successfulHits = missedHits = 0;
         //if it is the first level
         if (levelOfDifficulty == 1)
@@ -92,6 +92,9 @@ public class AssignmentMiniGameManager : MonoBehaviour
                 assignmentMiniGameGroup.SetActive(false);
                 centralGamemanager.GetComponent<GameManager>().moves--;
 
+                foreach(GameObject assignment in GameObject.FindGameObjectsWithTag("Assignment"))
+                Destroy(assignment);
+
                 centralGamemanager.GetComponent<GameManager>().FindAverage((int)Math.Round(average)); //Add grade percentage to overall score
 
                 if (gameWon)
@@ -105,8 +108,9 @@ public class AssignmentMiniGameManager : MonoBehaviour
 
     void FinishGame()
     {
-      
-            if (successfulHits > missedHits)
+       
+
+        if (successfulHits > missedHits)
             {
                 gameWon = true;
             }

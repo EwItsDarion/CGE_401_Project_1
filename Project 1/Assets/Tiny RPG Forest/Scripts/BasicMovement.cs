@@ -32,7 +32,7 @@ public class BasicMovement : MonoBehaviour
     
 
 
-    public float speed = 5f;
+    public float speed = 2.5f;
 
     void Start() {
         inZone = false;

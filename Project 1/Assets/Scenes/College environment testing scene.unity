@@ -35339,6 +35339,11 @@ PrefabInstance:
       propertyPath: countDownText
       value: 
       objectReference: {fileID: 1334218091}
+    - target: {fileID: 4763338915732379735, guid: fb5e76a8ec67b8c4d92499e4095c21df,
+        type: 3}
+      propertyPath: assignmentMiniGameManager
+      value: 
+      objectReference: {fileID: 1856853592}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb5e76a8ec67b8c4d92499e4095c21df, type: 3}
 --- !u!1 &1655049874 stripped

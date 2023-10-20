@@ -32,7 +32,7 @@ public class SpawnManager : MonoBehaviour
 
     IEnumerator SpawnObjectsInRandomPosition()
     {
-        if (GameManager.currentLevel == 1)
+        if (AssignmentMiniGameManager.levelOfDifficulty==1)
             yield return new WaitForSeconds(5f);
       
             //add a 3 second delay before first spawning objects
@@ -48,13 +48,13 @@ public class SpawnManager : MonoBehaviour
         
 
 
-        while (AssignmentMiniGameManager.gameOver==false)
-        { 
-            Instantiate(objectBeingSpawned, new Vector3(Random.Range(lowerBoundX, upperBoundX), Random.Range(lowerBoundY, upperBoundY), -10), objectBeingSpawned.transform.rotation);
+        while (!AssignmentMiniGameManager.gameOver || AssignmentMiniGameManager.assignmentsRemaining != 0)
+        {
 
-        
-            yield return new WaitForSeconds(5.0f);
-          
+           
+                Instantiate(objectBeingSpawned, new Vector3(Random.Range(lowerBoundX, upperBoundX), Random.Range(lowerBoundY, upperBoundY), -10), objectBeingSpawned.transform.rotation);
+
+            yield return new WaitForSeconds((5-(.5f * AssignmentMiniGameManager.levelOfDifficulty)) +1);
         }
     }
 

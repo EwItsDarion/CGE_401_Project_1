@@ -37,7 +37,7 @@ public class TypingMiniGameManager : MonoBehaviour
         }
 
         LetterController.speed = levelOfDifficulty;
-        maximumNumberofLetters = 5*levelOfDifficulty;
+        maximumNumberofLetters = 10+levelOfDifficulty; //set speed of letters
 
         letterSpawnManager.GetComponent<LetterSpawner>().StartSpawn();
 

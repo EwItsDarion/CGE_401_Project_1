@@ -9,6 +9,7 @@ TagManager:
   - Letter
   - TypingMinigameActivator
   - AssignmentMinigameActivator
+  - Assignment
   layers:
   - Default
   - TransparentFX

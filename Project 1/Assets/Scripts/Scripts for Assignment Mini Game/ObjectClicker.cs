@@ -11,8 +11,9 @@ public class ObjectClicker : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void OnMouseOver()
     {
+        
          if(Input.GetMouseButtonDown(0))
         {
             AssignmentMiniGameManager.successfulHits++;
