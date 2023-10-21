@@ -50,17 +50,26 @@ TagManager:
   - name: Floors
     uniqueID: 1154790675
     locked: 0
+  - name: 'Flowers '
+    uniqueID: 3719539255
+    locked: 0
   - name: NPCZones
     uniqueID: 358912687
-    locked: 0
-  - name: NonTilemapObj
-    uniqueID: 2533076793
     locked: 0
   - name: Decoration
     uniqueID: 622047129
     locked: 0
+  - name: NonTilemapObj
+    uniqueID: 2533076793
+    locked: 0
   - name: Desks
     uniqueID: 1706339689
+    locked: 0
+  - name: Trees Top
+    uniqueID: 616653797
+    locked: 0
+  - name: Doors
+    uniqueID: 316451467
     locked: 0
   - name: Walls
     uniqueID: 2012497491
