@@ -12,11 +12,18 @@ public class AssignmentMiniGameManager : MonoBehaviour
 {
     static public int maximumAssignments, assignmentsRemaining;
     static public float successfulHits, missedHits,average;
-    public Text tutorialText1, tutorialText2, tutorialText3, ScoreText,levelCompleteText;
-    static public bool gameOver, gameWon, gameLoss,objectDestroyed;
+    public Text /*tutorialText1, tutorialText2, tutorialText3*/ScoreText,levelCompleteText;
+    public GameObject tutorialPanel, beginningTutorialGuide, tutorialGuide1,tutorialGuide2,tutorialGuide3,tutorialGuide4;
+    static public bool gameOver, gameWon, gameLoss,objectDestroyed,pause;
     public GameObject assignmentMiniGameGroup, mainCollegeGroup;   //Groups
     public GameObject centralGamemanager, assignmentSpawnManager;
     public static int levelOfDifficulty = 1;
+    public static float time, timeDelay;
+
+    private void Start()
+    {
+        StartGame();
+    }
 
     // Start is called before the first frame update
     public void StartGame()
@@ -27,26 +34,41 @@ public class AssignmentMiniGameManager : MonoBehaviour
         //if it is the first level
         if (levelOfDifficulty == 1)
         {
+            tutorialPanel.SetActive(true);
+            beginningTutorialGuide.SetActive(true);
+            tutorialGuide1.SetActive(false);
+            tutorialGuide2.SetActive(false);
+            tutorialGuide3.SetActive(false);
+            tutorialGuide4.SetActive(false);
 
-         
-            tutorialText1.enabled = true;
-            tutorialText2.enabled = false;
-            tutorialText3.enabled = false;
+            time = 0f;
+            timeDelay = 5f;
+
+            //tutorialText1.enabled = true;
+            //tutorialText2.enabled = false;
+            //tutorialText3.enabled = false;
 
         }
         else
         {
-            tutorialText1.enabled = false;
-            tutorialText2.enabled = false;
-            tutorialText3.enabled = false;
+
+            assignmentSpawnManager.GetComponent<SpawnManager>().StartSpawn();
+            tutorialPanel.SetActive(false);
+            beginningTutorialGuide.SetActive(false);
+            tutorialGuide1.SetActive(false);
+            tutorialGuide2.SetActive(false);
+            tutorialGuide3.SetActive(false);
+            tutorialGuide4.SetActive(false);
+            //tutorialText1.enabled = false;
+            //tutorialText2.enabled = false;
+            //tutorialText3.enabled = false;
         }
 
         //Increase assignments 
-        maximumAssignments = levelOfDifficulty * 5;
+        maximumAssignments = levelOfDifficulty * 7;
 
         assignmentsRemaining = maximumAssignments;
 
-        assignmentSpawnManager.GetComponent<SpawnManager>().StartSpawn();
 
        
 
@@ -62,18 +84,90 @@ public class AssignmentMiniGameManager : MonoBehaviour
 
         if(levelOfDifficulty == 1)
         {
-            if (successfulHits == 4 || missedHits == 4)
+
+            if (beginningTutorialGuide.activeInHierarchy == true && Input.GetKeyDown(KeyCode.Space))
             {
-                tutorialText1.enabled = false;
-                tutorialText2.enabled = false;
-                tutorialText3.enabled = true;
+                assignmentSpawnManager.GetComponent<SpawnManager>().StartSpawn();
+                beginningTutorialGuide.SetActive(false);
+                tutorialPanel.SetActive(false);
+
             }
-            if (successfulHits == 2 || missedHits == 2)
+
+            if (assignmentsRemaining == 6 && time <= timeDelay * 1)
             {
-                tutorialText1.enabled = false;
-                tutorialText2.enabled = true;
-                tutorialText3.enabled = false;
+                tutorialGuide1.SetActive(true);
+                tutorialPanel.SetActive(true);
+                time += 1f * Time.deltaTime;
+                pause = true;
+
             }
+            else if (tutorialGuide1.activeInHierarchy == true)
+            {
+                tutorialGuide1.SetActive(false);
+                tutorialPanel.SetActive(false);
+                pause = false;
+            }
+
+
+            if (assignmentsRemaining == 4 && time < timeDelay * 2)
+            {
+                tutorialGuide2.SetActive(true);
+                tutorialPanel.SetActive(true);
+                time += 1f * Time.deltaTime;
+                pause = true;
+
+            }
+            else if (tutorialGuide2.activeInHierarchy == true)
+            {
+                tutorialGuide2.SetActive(false);
+                tutorialPanel.SetActive(false);
+                pause = false;
+            }
+
+            if (assignmentsRemaining == 3 && time < timeDelay * 3)
+            {
+                tutorialGuide3.SetActive(true);
+                tutorialPanel.SetActive(true);
+                time += 1f * Time.deltaTime;
+                pause = true;
+
+            }
+            else if (tutorialGuide1.activeInHierarchy == true)
+            {
+                tutorialGuide3.SetActive(false);
+                tutorialPanel.SetActive(false);
+                pause = false;
+            }
+
+            if (assignmentsRemaining == 1 && time < timeDelay * 4)
+            {
+                tutorialGuide4.SetActive(true);
+                tutorialPanel.SetActive(true);
+                time += 1f * Time.deltaTime;
+                pause = true;
+
+            }
+            else if (tutorialGuide1.activeInHierarchy == true)
+            {
+                tutorialGuide4.SetActive(false);
+                tutorialPanel.SetActive(false);
+                pause = false;
+            }
+
+          
+
+            //if (successfulHits == 4 || missedHits == 4)
+            //{
+            //    tutorialText1.enabled = false;
+            //    tutorialText2.enabled = false;
+            //    tutorialText3.enabled = true;
+            //}
+            //if (successfulHits == 2 || missedHits == 2)
+            //{
+            //    tutorialText1.enabled = false;
+            //    tutorialText2.enabled = true;
+            //    tutorialText3.enabled = false;
+            //}
 
         }
 
@@ -108,8 +202,6 @@ public class AssignmentMiniGameManager : MonoBehaviour
 
     void FinishGame()
     {
-       
-
         if (successfulHits > missedHits)
             {
                 gameWon = true;
@@ -125,9 +217,9 @@ public class AssignmentMiniGameManager : MonoBehaviour
 
         if (GameManager.currentLevel==1)
             {
-                tutorialText1.enabled = false;
-                tutorialText2.enabled = false;
-                tutorialText3.enabled = false;
+                //tutorialText1.enabled = false;
+                //tutorialText2.enabled = false;
+                //tutorialText3.enabled = false;
                
             }
 

@@ -40,9 +40,13 @@ public class LetterSpawner : MonoBehaviour
         
         while (TypingMiniGameManager.gameOver==false)
         {
-            SpawnRandomPrefab();
             float delay = 3f;
+            if (TypingMiniGameManager.pause==false)
+            {
+                SpawnRandomPrefab();   
+            }
             yield return new WaitForSeconds(delay);
+
         }
 
     }

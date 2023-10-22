@@ -59,45 +59,59 @@ public class PlayerControllerManager : MonoBehaviour
         randomWordIndex = Random.Range(0, randomWords.Length);
         if (other.gameObject.CompareTag("Letter"))
         {
-            //if matcher collides with a letter and the player types the letter, destroy the letter
-            if (other.gameObject.name == "Letter A(Clone)")
+            TypingMiniGameManager.letterCollidedWithTyper = true;
+
+            if ((TypingMiniGameManager.levelOfDifficulty==1&&TypingMiniGameManager.canPress)|| TypingMiniGameManager.levelOfDifficulty > 1)
             {
-                if (Input.GetKey(KeyCode.A))
+                //if matcher collides with a letter and the player types the letter, destroy the letter
+                if (other.gameObject.name == "Letter A(Clone)")
                 {
-                    computerText.text += randomWords[randomWordIndex] + " ";
-                    Destroy(other.gameObject);
-                    Debug.Log("Hit");
-                    successfulHit = true;
-                    //Increment successful hits
-                    successfulHitCount++;
-                    //Decrement number of letters remaining
-                    TypingMiniGameManager.lettersRemaining--;
+
+                    if (Input.GetKey(KeyCode.A))
+                    {
+                        computerText.text += randomWords[randomWordIndex] + " ";
+                        Destroy(other.gameObject);
+                        Debug.Log("Hit");
+                        successfulHit = true;
+                        TypingMiniGameManager.letterCollidedWithTyper=false;
+                        //Increment successful hits
+                        successfulHitCount++;
+                        //Decrement number of letters remaining
+                        TypingMiniGameManager.lettersRemaining--;
+                    }
+
+                }
+                else if (other.gameObject.name == "Letter S(Clone)")
+                {
+                    if (Input.GetKey(KeyCode.S))
+                    {
+                        computerText.text += randomWords[randomWordIndex] + " ";
+                        Destroy(other.gameObject);
+
+                        Debug.Log("Hit");
+                        successfulHit = true;
+                        TypingMiniGameManager.letterCollidedWithTyper = false;
+                        successfulHitCount++;
+                        TypingMiniGameManager.lettersRemaining--;
+                    }
                 }
 
-            }
-            else if (other.gameObject.name == "Letter S(Clone)")
-            {
-                if (Input.GetKey(KeyCode.S))
+                else if (other.gameObject.name == "Letter D(Clone)")
                 {
-                    computerText.text += randomWords[randomWordIndex] + " ";
-                    Destroy(other.gameObject);
-                    Debug.Log("Hit");
-                    successfulHit = true;
-                    successfulHitCount++;
-                    TypingMiniGameManager.lettersRemaining--;
-                }
-            }
+                    if (Input.GetKey(KeyCode.D))
+                    {
 
-            else if (other.gameObject.name == "Letter D(Clone)")
-            {
-                if (Input.GetKey(KeyCode.D))
-                {
-                    computerText.text += randomWords[randomWordIndex] + " ";
-                    Destroy(other.gameObject);
-                    Debug.Log("Hit");
-                    successfulHit = true;
-                    successfulHitCount++;
-                    TypingMiniGameManager.lettersRemaining--;
+                        TypingMiniGameManager.letterCollidedWithTyper = false;
+
+                        computerText.text += randomWords[randomWordIndex] + " ";
+                        Destroy(other.gameObject);
+
+                        Debug.Log("Hit");
+                        successfulHit = true;
+
+                        successfulHitCount++;
+                        TypingMiniGameManager.lettersRemaining--;
+                    }
                 }
             }
         }

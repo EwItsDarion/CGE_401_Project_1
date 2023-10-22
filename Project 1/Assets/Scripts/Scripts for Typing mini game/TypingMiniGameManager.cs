@@ -8,80 +8,161 @@ public class TypingMiniGameManager : MonoBehaviour
     static public int maximumNumberofLetters, lettersRemaining;
     private float average;
 
-    public Text tutorialText1, tutorialText2, tutorialText3, tutorialText4, levelComplete, numberofLettersRemainingText;
-    static public bool gameOver, gameWon, gameLoss;
+    public Text levelComplete, numberofLettersRemainingText;
+    public GameObject tutorialPanel, tutorialGuide1,tutorialGuide2,tutorialGuide3,tutorialGuide4,tutorialGuide5,levelCompletePanel;
+    static public bool gameOver, gameWon, gameLoss,letterCollidedWithTyper,pause,canPress;
     public GameObject typingMiniGameGroup, collegeSceneGroup;
     public GameObject centralGameManager;
     public GameObject letterSpawnManager;//get spawner
     private GameObject[] remainingLettersAfterFinish;
-    private int levelOfDifficulty=1;
-    // Start is called before the first frame update
+    public static int levelOfDifficulty = 1;
+    public static float time, timeDelay;
+
     public void StartGame()
     {
         gameOver = false;
+        levelComplete.enabled = false;
+        levelCompletePanel.SetActive(false);
 
-       
 
-        tutorialText1.enabled = false;
-        tutorialText2.enabled = false;
-        tutorialText3.enabled = false;
-        tutorialText4.enabled = false;
-
-        
 
         //if it is the first level, display tutorial text
         if (levelOfDifficulty == 1) // if level 1
         {
-            tutorialText1.enabled = true;
-       
+            //tutorialText1.enabled = true;
+            tutorialPanel.SetActive(true);
+            tutorialGuide1.SetActive(true);
+            tutorialGuide2.SetActive(false);
+            tutorialGuide3.SetActive(false);
+            tutorialGuide4.SetActive(false);
+            tutorialGuide5.SetActive(false);
+
+
+
+            time = 0f;
+            timeDelay = 5f;
+            canPress = false;
         }
+        else
+        {
+            letterSpawnManager.GetComponent<LetterSpawner>().StartSpawn();
+        }
+        LetterController.speed = levelOfDifficulty+3;
+        maximumNumberofLetters = 7*levelOfDifficulty; //set speed of letters
 
-        LetterController.speed = levelOfDifficulty;
-        maximumNumberofLetters = 10+levelOfDifficulty; //set speed of letters
-
-        letterSpawnManager.GetComponent<LetterSpawner>().StartSpawn();
 
         lettersRemaining = maximumNumberofLetters;
 
         PlayerControllerManager.successfulHitCount = PlayerControllerManager.failedHitCount = 0;
 
-        levelComplete.enabled = false;
+       
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        //If level is 1, go through tutorial
+        if (levelOfDifficulty == 1)
+        {
+            if(tutorialGuide1.activeInHierarchy==true&& Input.GetKeyDown(KeyCode.Space))
+            {
+                letterSpawnManager.GetComponent<LetterSpawner>().StartSpawn();
+                tutorialGuide1.SetActive(false);
+                tutorialPanel.SetActive(false);
+                
+            }
+
+            if (letterCollidedWithTyper && lettersRemaining==maximumNumberofLetters && time <= timeDelay * 1) //If the letter has met with the keyboard typer, pause for a few seconds
+            {
+                tutorialGuide2.SetActive(true); //Instruct them what to do
+                tutorialPanel.SetActive(true);
+                LetterController.speed = 0;
+                pause = true;
+
+                time += 1f * Time.deltaTime;
+               
+            }
+            else if (time>=timeDelay*1) //If a certain amount of time has elapsed, allow the player to type the key/letter
+            {
+               
+                tutorialGuide2.GetComponentInChildren<Text>().text = " \"..Type the following keys on your keyboard, A, S, and D, at the right time..\"" + "\n\n(Type the corresponding letter to continue)";
+                tutorialGuide2.GetComponentInChildren<Text>().color = new Color(0, 0, 139);
+                canPress = true;
+
+                if (letterCollidedWithTyper==false)
+                {
+                    tutorialGuide2.SetActive(false);
+                    tutorialPanel.SetActive(false);
+                    LetterController.speed = levelOfDifficulty + 3;
+                    pause = false;
+                }
+            }
+           
+            //For the rest of tutorial, the prompts will give advice to the student
+            if(lettersRemaining==5 && time<timeDelay*2)
+            {
+                tutorialGuide3.SetActive(true);
+                tutorialPanel.SetActive(true);
+                LetterController.speed = 0;
+                time += 1f * Time.deltaTime;
+                pause = true;
+                
+            }
+            else if (tutorialGuide3.activeInHierarchy == true)
+            {
+                tutorialGuide3.SetActive(false);
+                tutorialPanel.SetActive(false);
+                LetterController.speed = levelOfDifficulty + 3;
+                pause = false;
+            }
+
+            if (lettersRemaining == 3 && time < timeDelay*3)
+            {
+                tutorialGuide4.SetActive(true);
+                tutorialGuide3.SetActive(false);
+                tutorialPanel.SetActive(true);
+                LetterController.speed = 0;
+                time += 1f * Time.deltaTime;
+                pause = true;
+            }
+            else if (tutorialGuide4.activeInHierarchy == true)
+            {
+                tutorialGuide4.SetActive(false);
+                tutorialPanel.SetActive(false);
+                LetterController.speed = levelOfDifficulty + 3;
+                pause = false;
+            }
+
+
+            if (lettersRemaining == 1 && time < (timeDelay*4)+2)
+            {
+                tutorialGuide5.SetActive(true);
+                tutorialGuide3.SetActive(false);
+                tutorialGuide4.SetActive(false);
+                tutorialPanel.SetActive(true);
+                LetterController.speed = 0;
+                  time += 1f * Time.deltaTime;
+                pause = true;
+            }
+            else if (tutorialGuide5.activeInHierarchy == true)
+            {
+                tutorialGuide5.SetActive(false);
+                tutorialPanel.SetActive(false);
+                LetterController.speed = levelOfDifficulty + 3;
+                pause = false;
+            }
+
+        }
+
+
         numberofLettersRemainingText.text = "Number of hits: " + PlayerControllerManager.successfulHitCount +
            "\nNumber of Misses: " + PlayerControllerManager.failedHitCount +
            "\nNumber of letters remaining: " + lettersRemaining;
 
 
 
-        //If level is 1, go through tutorial
-        if (levelOfDifficulty == 1)
-        {
-            if (PlayerControllerManager.successfulHitCount == 4 || PlayerControllerManager.failedHitCount == 4)
-            {
-                tutorialText4.enabled = true;
-                tutorialText1.enabled = false;
-                tutorialText2.enabled = false;
-                tutorialText3.enabled = false;
-            }
-            if (PlayerControllerManager.successfulHitCount == 2 || PlayerControllerManager.failedHitCount == 2)
-            {
-                tutorialText3.enabled = true;
-                tutorialText1.enabled = false;
-                tutorialText2.enabled = false;
-                tutorialText4.enabled = false;
-            }
-            if (PlayerControllerManager.successfulHitCount == 1 || PlayerControllerManager.failedHitCount == 1)
-            {
-                tutorialText2.enabled = true;
-                tutorialText1.enabled = false;
-                tutorialText3.enabled = false;
-                tutorialText4.enabled = false;
-            }
-        }
+       
 
 
         if (lettersRemaining == 0)
@@ -90,8 +171,10 @@ public class TypingMiniGameManager : MonoBehaviour
             FinishGame();
             if (!Input.GetKeyDown(KeyCode.Space))
             {
+                levelCompletePanel.SetActive(true);
                 levelComplete.text += "\nSuccessful strokes: " + PlayerControllerManager.successfulHitCount + "\nFailed Strokes: " +
                        PlayerControllerManager.failedHitCount + "\nAccuracy: " + average + " %" + "\n\nPress space to continue";
+
             }
             else
             {
@@ -129,10 +212,10 @@ public class TypingMiniGameManager : MonoBehaviour
         }
 
         levelComplete.enabled = true;
-        tutorialText2.enabled = false;
-        tutorialText1.enabled = false;
-        tutorialText3.enabled = false;
-        tutorialText4.enabled = false;
+        //tutorialText2.enabled = false;
+        //tutorialText1.enabled = false;
+        //tutorialText3.enabled = false;
+        //tutorialText4.enabled = false;
 
 
 
