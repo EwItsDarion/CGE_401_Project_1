@@ -14,7 +14,7 @@ public class AssignmentMiniGameManager : MonoBehaviour
     static public float successfulHits, missedHits,average;
     public Text /*tutorialText1, tutorialText2, tutorialText3*/ScoreText,levelCompleteText;
     public GameObject tutorialPanel, beginningTutorialGuide, tutorialGuide1,tutorialGuide2,tutorialGuide3,tutorialGuide4;
-    static public bool gameOver, gameWon, gameLoss,objectDestroyed,pause;
+    static public bool gameOver, gameWon, gameLoss,objectDestroyed,pause,canClick;
     public GameObject assignmentMiniGameGroup, mainCollegeGroup;   //Groups
     public GameObject centralGamemanager, assignmentSpawnManager;
     public static int levelOfDifficulty = 1;
@@ -101,6 +101,7 @@ public class AssignmentMiniGameManager : MonoBehaviour
             {
                 tutorialGuide1.GetComponentInChildren<Text>().text = "(Click the assignment to continue)";
                 tutorialGuide1.GetComponentInChildren<Text>().color = new Color(0, 0, 139);
+                canClick = true;
                 if (assignmentsRemaining<maximumAssignments)
                 {
                     tutorialGuide1.SetActive(false);

@@ -8968,7 +8968,7 @@ MonoBehaviour:
   TypingGameGroup: {fileID: 31254455}
   AssignmentGameGroup: {fileID: 38548654}
   CollegeSceneGroup: {fileID: 1942770803}
-  typingManager: {fileID: 0}
+  typingManager: {fileID: 1216960353}
   assignmentManager: {fileID: 1856853593}
   academicScore: 0
   socialScore: 0
@@ -8992,10 +8992,10 @@ MonoBehaviour:
   socialBar: {fileID: 190021624}
   dialogueManager: {fileID: 1500722974}
   cutscene: 0
-  winPanel: {fileID: 873044731}
-  losePanel: {fileID: 1074392134}
-  losePanelText: {fileID: 51515315}
-  winPanelText: {fileID: 1432579672}
+  winPanel: {fileID: 0}
+  losePanel: {fileID: 0}
+  losePanelText: {fileID: 0}
+  winPanelText: {fileID: 0}
 --- !u!4 &656444301
 Transform:
   m_ObjectHideFlags: 0
@@ -52323,7 +52323,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7797085, y: 1}
+    m_SensorSize: {x: 1.7769424, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
