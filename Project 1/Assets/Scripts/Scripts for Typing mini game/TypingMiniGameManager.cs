@@ -22,8 +22,6 @@ public class TypingMiniGameManager : MonoBehaviour
 
     public void StartGame()
     {
-        gameAudio.enabled = true;
-        mainAudio.enabled = false;
         gameOver = false;
         levelComplete.enabled = false;
         levelCompletePanel.SetActive(false);
@@ -65,7 +63,8 @@ public class TypingMiniGameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        gameAudio.enabled = true;
+        mainAudio.enabled = false;
         //If level is 1, go through tutorial
         if (levelOfDifficulty == 1)
         {
