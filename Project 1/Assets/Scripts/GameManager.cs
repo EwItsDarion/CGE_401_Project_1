@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] NPCS;
 
     public GameObject tutorialElements;
+    public GameObject cutscenePanelBox;
     public GameObject Player;
     public Slider timerBar;
     public Slider academicBar;
@@ -52,7 +53,7 @@ public class GameManager : MonoBehaviour
         moves = 4;
         CutsceneManager = gameObject.GetComponent<DialogueTrigger>();
         scenetriggered = false;
-        cutscene = true;
+        cutscene = false;
         numberOfAssigments = 0;
         totalScore = 0;
         average = 0;
@@ -69,11 +70,13 @@ public class GameManager : MonoBehaviour
 
         if (cutscene) {
             tutorialElements.SetActive(false);
+            cutscenePanelBox.SetActive(true);
             Player.SetActive(false);
+
 
             if (!scenetriggered) {
                 CutsceneManager.TriggerDialogue("Cutscene" + currentLevel);
-                scenetriggered= true;
+                scenetriggered = true;
             }
             if (dialogueManager.empty) {
                 if (currentLevel == 1) { 
@@ -81,6 +84,8 @@ public class GameManager : MonoBehaviour
                 }
                 Player.SetActive(true);
                 cutscene = false;
+                cutscenePanelBox.SetActive(false);
+                dialogueManager.howMany = 0;
             }
         }
 

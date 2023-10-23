@@ -6,6 +6,7 @@ using UnityEngine;
 [System.Serializable]
 public class Dialogue
 {
+    public int requiredLevel;
     public string zone;
     public List<string> sentences; 
 }
