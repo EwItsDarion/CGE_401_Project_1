@@ -83,7 +83,7 @@ public class TypingMiniGameManager : MonoBehaviour
                 time += 1f * Time.deltaTime;
                
             }
-            else if (time>=timeDelay*1) //If a certain amount of time has elapsed, allow the player to type the key/letter
+            else if (time>=timeDelay*1&& tutorialGuide2.activeInHierarchy==true) //If a certain amount of time has elapsed, allow the player to type the key/letter
             {
                
                 tutorialGuide2.GetComponentInChildren<Text>().text = " \"..Type the following keys on your keyboard, A, S, and D, at the right time..\"" + "\n\n(Type the corresponding letter to continue)";
@@ -109,12 +109,18 @@ public class TypingMiniGameManager : MonoBehaviour
                 pause = true;
                 
             }
-            else if (tutorialGuide3.activeInHierarchy == true)
+            else if (time >= timeDelay * 2)
             {
-                tutorialGuide3.SetActive(false);
-                tutorialPanel.SetActive(false);
-                LetterController.speed = levelOfDifficulty + 3;
-                pause = false;
+                tutorialGuide3.GetComponentInChildren<Text>().text = "(Press Space to continue)";
+                tutorialGuide3.GetComponentInChildren<Text>().color = new Color(0, 0, 139);
+
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    tutorialGuide3.SetActive(false);
+                    tutorialPanel.SetActive(false);
+                    LetterController.speed = levelOfDifficulty + 3;
+                    pause = false;
+                }
             }
 
             if (lettersRemaining == 3 && time < timeDelay*3)
@@ -126,12 +132,18 @@ public class TypingMiniGameManager : MonoBehaviour
                 time += 1f * Time.deltaTime;
                 pause = true;
             }
-            else if (tutorialGuide4.activeInHierarchy == true)
+            else if (time >= timeDelay * 3)
             {
-                tutorialGuide4.SetActive(false);
-                tutorialPanel.SetActive(false);
-                LetterController.speed = levelOfDifficulty + 3;
-                pause = false;
+                tutorialGuide4.GetComponentInChildren<Text>().text = "(Press Space to continue)";
+                tutorialGuide4.GetComponentInChildren<Text>().color = new Color(0, 0, 139);
+
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    tutorialGuide4.SetActive(false);
+                    tutorialPanel.SetActive(false);
+                    LetterController.speed = levelOfDifficulty + 3;
+                    pause = false;
+                }
             }
 
 
@@ -145,12 +157,18 @@ public class TypingMiniGameManager : MonoBehaviour
                   time += 1f * Time.deltaTime;
                 pause = true;
             }
-            else if (tutorialGuide5.activeInHierarchy == true)
+            else if (time >= timeDelay * 4)
             {
-                tutorialGuide5.SetActive(false);
-                tutorialPanel.SetActive(false);
-                LetterController.speed = levelOfDifficulty + 3;
-                pause = false;
+                tutorialGuide5.GetComponentInChildren<Text>().text = "(Press Space to continue)";
+                tutorialGuide5.GetComponentInChildren<Text>().color = new Color(0, 0, 139);
+
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    tutorialGuide5.SetActive(false);
+                    tutorialPanel.SetActive(false);
+                    LetterController.speed = levelOfDifficulty + 3;
+                    pause = false;
+                }
             }
 
         }
