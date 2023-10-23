@@ -85,7 +85,7 @@ public class DialogueManager : MonoBehaviour
                 prof3.enabled = false;
                 cou1.enabled = false;
             }
-            if (manager.cutscene == true && howMany > 5 && howMany <= 10)
+            if (manager.cutscene == true && howMany > 5 && howMany <= 9)
             {
                 prof1.enabled = false;
                 prof2.enabled = false;
@@ -136,44 +136,8 @@ public class DialogueManager : MonoBehaviour
                 cou1.enabled = false;
                 lounge.enabled = false;
                 party.enabled = true;
-                olivia.enabled = false;
             }
-            if (howMany == 3)
-            {
-                daniel.enabled = true;
-            }
-            if (howMany == 4)
-            {
-                olivia.enabled = true;
-                daniel.enabled = false;
-            }
-            if (howMany == 5)
-            {
-                olivia.enabled = true;
-                daniel.enabled = true;
-                jessabelle.enabled = true;
-            }
-            if(howMany == 6)
-            {
-                olivia.enabled = false;
-                daniel.enabled = false;
-                jessabelle.enabled = false;
-            }
-            if(howMany == 8)
-            {
-                jessabelle.enabled = true;
-            }
-            if (howMany >= 9)
-            {
-                jessabelle.enabled = false;
-                cou1.enabled = true;
-            }
-            if (howMany == 16)
-            {
-                counselorOffice.enabled = true;
-                party.enabled = false;
-                cou1.enabled = true;
-            }
+           // if (GameManager.currentLevel <=)
 
         }
 

@@ -85,6 +85,7 @@ public class GameManager : MonoBehaviour
                 Player.SetActive(true);
                 cutscene = false;
                 cutscenePanelBox.SetActive(false);
+                dialogueManager.howMany = 0;
             }
         }
 
