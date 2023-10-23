@@ -14,7 +14,7 @@ public class ObjectClicker : MonoBehaviour
     void OnMouseOver()
     {
         
-         if(Input.GetMouseButtonDown(0)&&((AssignmentMiniGameManager.levelOfDifficulty==1&&(AssignmentMiniGameManager.pause==false||AssignmentMiniGameManager.assignmentsRemaining==AssignmentMiniGameManager.maximumAssignments))||AssignmentMiniGameManager.levelOfDifficulty>1))
+         if(Input.GetMouseButtonDown(0)&&(((AssignmentMiniGameManager.levelOfDifficulty==1&&(AssignmentMiniGameManager.canClick))||AssignmentMiniGameManager.levelOfDifficulty>1)))
         {
             AssignmentMiniGameManager.successfulHits++;
             AssignmentMiniGameManager.assignmentsRemaining--;

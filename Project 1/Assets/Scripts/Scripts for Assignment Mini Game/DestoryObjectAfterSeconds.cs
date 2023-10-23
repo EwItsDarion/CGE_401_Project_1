@@ -28,7 +28,7 @@ public class DestoryObjectAfterSeconds : MonoBehaviour
         while (AssignmentMiniGameManager.assignmentsRemaining !=0)
         {
 
-          yield return new WaitForSeconds(5 - (.5f*AssignmentMiniGameManager.levelOfDifficulty));
+          yield return new WaitForSeconds(6/AssignmentMiniGameManager.levelOfDifficulty);
 
             if (AssignmentMiniGameManager.pause == false)
             {
