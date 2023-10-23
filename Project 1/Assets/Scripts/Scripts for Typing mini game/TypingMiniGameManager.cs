@@ -230,12 +230,6 @@ public class TypingMiniGameManager : MonoBehaviour
         }
 
         levelComplete.enabled = true;
-        //tutorialText2.enabled = false;
-        //tutorialText1.enabled = false;
-        //tutorialText3.enabled = false;
-        //tutorialText4.enabled = false;
-
-
 
         average = (PlayerControllerManager.successfulHitCount / maximumNumberofLetters) * 100;
 
