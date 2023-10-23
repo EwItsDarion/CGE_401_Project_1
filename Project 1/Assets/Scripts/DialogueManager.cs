@@ -38,15 +38,15 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
-            dialogueBox.SetActive(true);
-            sentences.Clear();
-            foreach (var sentence in dialogue.sentences)
-            {
-                sentences.Enqueue(sentence);
-            }
-            empty = false;
+        dialogueBox.SetActive(true);
+        sentences.Clear();
+        foreach (var sentence in dialogue.sentences)
+        {
+            sentences.Enqueue(sentence);
+        }
+        empty = false;
 
-            DisplayNextSentence();
+        DisplayNextSentence();
     }
 
     public void DisplayNextSentence()
@@ -86,13 +86,14 @@ public class DialogueManager : MonoBehaviour
                 cou1.enabled = false;
             }
             if (manager.cutscene == true && howMany > 5 && howMany <= 9)
-            {
-                prof1.enabled = false;
-                prof2.enabled = false;
-                prof3.enabled = false;
-                cou1.enabled = true;
-                counselorOffice.enabled = true;
-            }
+                if (manager.cutscene == true && howMany > 5 && howMany <= 10)
+                {
+                    prof1.enabled = false;
+                    prof2.enabled = false;
+                    prof3.enabled = false;
+                    cou1.enabled = true;
+                    counselorOffice.enabled = true;
+                }
             if (manager.cutscene == true && howMany >= 11)
             {
                 prof1.enabled = false;
@@ -136,15 +137,52 @@ public class DialogueManager : MonoBehaviour
                 cou1.enabled = false;
                 lounge.enabled = false;
                 party.enabled = true;
+                olivia.enabled = false;
             }
-           // if (GameManager.currentLevel <=)
+            if (howMany == 3)
+            {
+                daniel.enabled = true;
+            }
+            if (howMany == 4)
+            {
+                olivia.enabled = true;
+                daniel.enabled = false;
+            }
+            if (howMany == 5)
+            {
+                olivia.enabled = true;
+                daniel.enabled = true;
+                jessabelle.enabled = true;
+            }
+            if (howMany == 6)
+            {
+                olivia.enabled = false;
+                daniel.enabled = false;
+                jessabelle.enabled = false;
+            }
+            if (howMany == 8)
+            {
+                jessabelle.enabled = true;
+            }
+            if (howMany >= 9)
+            {
+                jessabelle.enabled = false;
+                cou1.enabled = true;
+            }
+            if (howMany == 16)
+            {
+                counselorOffice.enabled = true;
+                party.enabled = false;
+                cou1.enabled = true;
+            }
+            // if (GameManager.currentLevel <=)
 
         }
 
 
 
 
-            if (sentences.Count == 0)
+        if (sentences.Count == 0)
         {
             empty = true;
             EndDialogue();
@@ -167,7 +205,7 @@ public class DialogueManager : MonoBehaviour
         {
             DisplayNextSentence();
         }
-        
+
 
     }
 

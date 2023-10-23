@@ -38,6 +38,10 @@ public class GameManager : MonoBehaviour
     public DialogueManager dialogueManager;
     private bool scenetriggered;
     public bool cutscene;
+    public Image winPanel;
+    public Image losePanel;
+    public Text losePanelText;
+    public Text winPanelText;
 
 
     private int numberOfAssigments;
@@ -57,6 +61,7 @@ public class GameManager : MonoBehaviour
         numberOfAssigments = 0;
         totalScore = 0;
         average = 0;
+        maxLevel = 4;
     }
 
     // Update is called once per frame
@@ -91,6 +96,7 @@ public class GameManager : MonoBehaviour
 
         //timerBar.value = moves;
 
+
         scoreText.text = "Social Score: " + socialScore;
 
         if (moves <= 0) {
@@ -101,27 +107,39 @@ public class GameManager : MonoBehaviour
                 cutscene = true;
                 scenetriggered = false;
             }
+            foreach (var NPC in NPCS)
+            {
+                NPC.GetComponent<BoxCollider2D>().enabled = true;
+            }
+        }
+        if (currentLevel > maxLevel)
+        {
+            gameOver = true;
 
-            if (currentLevel > maxLevel) {
-                gameOver = true;
-
-                if (academicScore > 10000 && socialScore > 15) { 
-                    scoreText.text = "You Win!\nPress R to restart";
-                }
-                else
+            if (academicScore > 15 && socialScore > 15)
+            {
+                losePanel.enabled = true;
+                losePanelText.enabled = true;
+                Player.SetActive(false);
+                if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    scoreText.text = "You Lost!\nPress R to restart";
+                    winPanelText.text = "Press R to restart.";
                 }
-                if(Input.GetKeyDown(KeyCode.R)) {
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-
-                }
-
-
-                foreach (var NPC in NPCS)
+            }
+            else
+            {
+                losePanel.enabled = true;
+                losePanelText.enabled = true;
+                Player.SetActive(false);
+                if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    NPC.GetComponent<BoxCollider2D>().enabled = true;
+                    losePanelText.text = "Press R to restart.";
                 }
+            }
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
             }
 
             /*gameOver = true;
