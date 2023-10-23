@@ -17,12 +17,9 @@ public class TypingMiniGameManager : MonoBehaviour
     private GameObject[] remainingLettersAfterFinish;
     public static int levelOfDifficulty = 1;
     public static float time, timeDelay;
-    public AudioSource gameAudio;
-    public AudioSource mainAudio;
 
     public void StartGame()
     {
-        mainAudio.enabled = false;
         gameOver = false;
         levelComplete.enabled = false;
         levelCompletePanel.SetActive(false);
@@ -223,7 +220,6 @@ public class TypingMiniGameManager : MonoBehaviour
 
     void FinishGame()
     {
-        gameAudio.enabled = false;
         if (PlayerControllerManager.successfulHitCount > PlayerControllerManager.failedHitCount)
         {
             gameWon = true;
