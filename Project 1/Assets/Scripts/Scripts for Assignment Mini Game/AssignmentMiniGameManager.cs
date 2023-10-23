@@ -19,10 +19,14 @@ public class AssignmentMiniGameManager : MonoBehaviour
     public GameObject centralGamemanager, assignmentSpawnManager;
     public static int levelOfDifficulty = 1;
     public static float time, timeDelay;
+    public AudioSource mainAudio;
+    public AudioSource gameAudio;
 
     // Start is called before the first frame update
     public void StartGame()
     {
+        gameAudio.enabled = true;
+        mainAudio.enabled = false;
         gameOver = false;
         
         successfulHits = missedHits = 0;
@@ -219,6 +223,8 @@ public class AssignmentMiniGameManager : MonoBehaviour
 
     void FinishGame()
     {
+        mainAudio.enabled = true;
+        gameAudio.enabled = false;
         if (successfulHits > missedHits)
             {
                 gameWon = true;
