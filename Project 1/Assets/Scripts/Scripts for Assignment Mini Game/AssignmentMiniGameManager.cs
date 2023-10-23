@@ -20,11 +20,6 @@ public class AssignmentMiniGameManager : MonoBehaviour
     public static int levelOfDifficulty = 1;
     public static float time, timeDelay;
 
-    private void Start()
-    {
-        StartGame();
-    }
-
     // Start is called before the first frame update
     public void StartGame()
     {
@@ -93,19 +88,25 @@ public class AssignmentMiniGameManager : MonoBehaviour
 
             }
 
-            if (assignmentsRemaining == 6 && time <= timeDelay * 1)
+            if (GameObject.FindGameObjectWithTag("Assignment")!=null /*&& assignmentsRemaining==maximumAssignments*/ && time <= timeDelay * 1)
             {
+
                 tutorialGuide1.SetActive(true);
                 tutorialPanel.SetActive(true);
                 time += 1f * Time.deltaTime;
                 pause = true;
 
             }
-            else if (tutorialGuide1.activeInHierarchy == true)
+            else if (time >= timeDelay * 1&&tutorialGuide1.activeInHierarchy == true)
             {
-                tutorialGuide1.SetActive(false);
-                tutorialPanel.SetActive(false);
-                pause = false;
+                tutorialGuide1.GetComponentInChildren<Text>().text = "(Click the assignment to continue)";
+                tutorialGuide1.GetComponentInChildren<Text>().color = new Color(0, 0, 139);
+                if (assignmentsRemaining<maximumAssignments)
+                {
+                    tutorialGuide1.SetActive(false);
+                    tutorialPanel.SetActive(false);
+                    pause = false;
+                }
             }
 
 
@@ -119,9 +120,14 @@ public class AssignmentMiniGameManager : MonoBehaviour
             }
             else if (tutorialGuide2.activeInHierarchy == true)
             {
-                tutorialGuide2.SetActive(false);
-                tutorialPanel.SetActive(false);
-                pause = false;
+                tutorialGuide2.GetComponentInChildren<Text>().text = "(Press Space to continue)";
+                tutorialGuide2.GetComponentInChildren<Text>().color = new Color(0, 0, 139);
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    tutorialGuide2.SetActive(false);
+                    tutorialPanel.SetActive(false);
+                    pause = false;
+                }
             }
 
             if (assignmentsRemaining == 3 && time < timeDelay * 3)
@@ -132,11 +138,16 @@ public class AssignmentMiniGameManager : MonoBehaviour
                 pause = true;
 
             }
-            else if (tutorialGuide1.activeInHierarchy == true)
+            else if (tutorialGuide3.activeInHierarchy == true)
             {
-                tutorialGuide3.SetActive(false);
-                tutorialPanel.SetActive(false);
-                pause = false;
+                tutorialGuide3.GetComponentInChildren<Text>().text = "(Press Space to continue)";
+                tutorialGuide3.GetComponentInChildren<Text>().color = new Color(0, 0, 139);
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    tutorialGuide3.SetActive(false);
+                    tutorialPanel.SetActive(false);
+                    pause = false;
+                }
             }
 
             if (assignmentsRemaining == 1 && time < timeDelay * 4)
@@ -147,11 +158,16 @@ public class AssignmentMiniGameManager : MonoBehaviour
                 pause = true;
 
             }
-            else if (tutorialGuide1.activeInHierarchy == true)
+            else if (tutorialGuide4.activeInHierarchy == true)
             {
-                tutorialGuide4.SetActive(false);
-                tutorialPanel.SetActive(false);
-                pause = false;
+                tutorialGuide4.GetComponentInChildren<Text>().text = "(Press Space to continue)";
+                tutorialGuide4.GetComponentInChildren<Text>().color = new Color(0, 0, 139);
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    tutorialGuide4.SetActive(false);
+                    tutorialPanel.SetActive(false);
+                    pause = false;
+                }
             }
 
           
@@ -215,13 +231,6 @@ public class AssignmentMiniGameManager : MonoBehaviour
 
         average = (successfulHits/maximumAssignments) * 100;
 
-        if (GameManager.currentLevel==1)
-            {
-                //tutorialText1.enabled = false;
-                //tutorialText2.enabled = false;
-                //tutorialText3.enabled = false;
-               
-            }
 
         if (gameWon)
         {

@@ -51,7 +51,7 @@ public class SpawnManager : MonoBehaviour
         while (!AssignmentMiniGameManager.gameOver || AssignmentMiniGameManager.assignmentsRemaining != 0)
         {
 
-           
+                if(AssignmentMiniGameManager.pause==false)
                 Instantiate(objectBeingSpawned, new Vector3(Random.Range(lowerBoundX, upperBoundX), Random.Range(lowerBoundY, upperBoundY), -10), objectBeingSpawned.transform.rotation);
 
             yield return new WaitForSeconds((5-(.5f * AssignmentMiniGameManager.levelOfDifficulty)) +1);

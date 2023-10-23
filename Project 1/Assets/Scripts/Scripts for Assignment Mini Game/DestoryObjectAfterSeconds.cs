@@ -29,9 +29,13 @@ public class DestoryObjectAfterSeconds : MonoBehaviour
         {
 
           yield return new WaitForSeconds(5 - (.5f*AssignmentMiniGameManager.levelOfDifficulty));
-            Destroy(gameObject);
-            AssignmentMiniGameManager.missedHits++;
-            AssignmentMiniGameManager.assignmentsRemaining-- ;
+
+            if (AssignmentMiniGameManager.pause == false)
+            {
+                Destroy(gameObject);
+                AssignmentMiniGameManager.missedHits++;
+                AssignmentMiniGameManager.assignmentsRemaining--;
+            }
 
         }
     }
